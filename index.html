@@ -149,6 +149,7 @@ body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;height
       <!-- <li data-s="orders" onclick="go('orders')"><span class="material-icons-round mi">shopping_cart</span>My Orders</li> hidden — not yet defined -->
       <li data-s="apps"       onclick="go('apps')"><span class="material-icons-round mi">apps</span>Apps</li>
       <li data-s="coupons" onclick="go('coupons')"><span class="material-icons-round mi">local_offer</span>Coupons</li>
+      <li data-s="ticker"  onclick="go('ticker')"><span class="material-icons-round mi">campaign</span>Informativo</li>
     </ul>
     <div class="sb-foot">
       <button class="btn" style="background:rgba(63,185,80,.15);color:var(--ok);border:1px solid rgba(63,185,80,.3)" onclick="openPublish()"><span class="material-icons-round mi">cloud_upload</span>Publish to Cloud</button>
@@ -250,6 +251,7 @@ const SECS={
   orders:{label:'My Orders',icon:'shopping_cart'},
   apps:{label:'Apps',icon:'apps'},
   coupons:{label:'Coupons',icon:'local_offer'},
+  ticker:{label:'Informativo',icon:'campaign'},
 };
 const CAT_SERVICES=['Grocery','Transportation','Medical','Maintenance','Emergency','Fast Food'];
 const CAT_LOCAL=['Restaurants','Quick Bites','Shopping','Attractions','Pharmacy','Grocery'];
@@ -320,6 +322,7 @@ const DEF={
     {id:'4',name:'Pool Heating',category:'Extras',description:'Heated pool for duration of your stay',price:'$75.00',imageUrl:''},
   ],
   coupons:[],
+  ticker:[],
   apps:[
     {id:'1',name:'Netflix',packageName:'com.netflix.mediaclient',iconUrl:'',order:1},
     {id:'2',name:'Disney+',packageName:'com.disney.disneyplus',iconUrl:'',order:2},
@@ -339,6 +342,7 @@ function init(){
   const s=localStorage.getItem('hubtv_data');
   data=s?JSON.parse(s):JSON.parse(JSON.stringify(DEF));
   data.coupons = data.coupons || [];
+  data.ticker  = data.ticker  || [];
   cat=CAT_SERVICES[0];
   render();
 }
@@ -353,7 +357,7 @@ function go(s){
   cat=(s==='services'?CAT_SERVICES:s==='localGuide'?CAT_LOCAL:[])[0]||null;
   document.querySelectorAll('.nav li').forEach(el=>el.classList.toggle('on',el.dataset.s===s));
   $('topTitle').textContent=SECS[s].label;
-  $('addBtn').style.display = (s==='coupons') ? 'none' : '';
+  $('addBtn').style.display = (s==='coupons'||s==='ticker') ? 'none' : '';
   render();
 }
 
@@ -367,6 +371,7 @@ function render(){
     orders:renderOrders,
     apps:renderApps,
     coupons:renderCoupons,
+    ticker:renderTicker,
   }[sec])();
 }
 
@@ -554,6 +559,81 @@ function renderCoupons(){
       </div>
     </li>`).join(''):'<li class="empty">Nenhum cupom gerado ainda. Clique em "Atualizar do GitHub" para sincronizar.</li>'}
   </ul></div>`;
+}
+
+function renderTicker(){
+  const msgs=data.ticker||[];
+  return `
+  <div class="infobox">
+    <b>Informativo (Ticker)</b> — texto corrido exibido na parte inferior da tela Home do app.<br>
+    Adicione as mensagens abaixo e clique em <b>Publish to Cloud</b> para atualizar o app.
+    As mensagens serão exibidas em sequência, separadas por <b> • </b>.
+  </div>
+  <div class="card" style="margin-bottom:14px">
+    <div class="card-hd"><span>Nova mensagem</span></div>
+    <div style="padding:14px;display:flex;gap:8px;align-items:flex-start">
+      <div style="flex:1">
+        <input id="ticker-input" placeholder="Ex: Pool maintenance Tuesday 8am–12pm. Checkout at 10am."
+          style="width:100%;padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-family:inherit;font-size:13px;outline:none"
+          onkeydown="if(event.key==='Enter')addTicker()">
+        <div class="hint" style="margin-top:5px">Pressione Enter ou clique em Adicionar. Depois, Publish to Cloud para salvar no app.</div>
+      </div>
+      <button class="btn pri" onclick="addTicker()" style="white-space:nowrap;flex-shrink:0"><span class="material-icons-round mi">add</span>Adicionar</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-hd">
+      <span>Mensagens ativas (${msgs.length})</span>
+      ${msgs.length?`<button class="btn del sm" onclick="clearAllTicker()"><span class="material-icons-round mi">delete_sweep</span>Limpar tudo</button>`:''}
+    </div>
+    <ul class="item-list">
+      ${msgs.map((m,i)=>`
+      <li class="row">
+        <div class="ricon"><span class="material-icons-round mi">campaign</span></div>
+        <div class="rbody">
+          <div class="rname">${x(m)}</div>
+          <div class="rsub">Posição ${i+1} de ${msgs.length}</div>
+        </div>
+        <div class="racts">
+          ${i>0?`<button class="btn out sm" title="Mover para cima" onclick="moveTicker(${i},-1)"><span class="material-icons-round mi">arrow_upward</span></button>`:''}
+          ${i<msgs.length-1?`<button class="btn out sm" title="Mover para baixo" onclick="moveTicker(${i},1)"><span class="material-icons-round mi">arrow_downward</span></button>`:''}
+          <button class="btn del sm" onclick="delTicker(${i})"><span class="material-icons-round mi">delete</span></button>
+        </div>
+      </li>`).join('')}
+      ${!msgs.length?'<li class="empty">Nenhuma mensagem ainda. Adicione acima e publique.</li>':''}
+    </ul>
+  </div>`;
+}
+
+function addTicker(){
+  const inp=$('ticker-input');
+  const txt=(inp.value||'').trim();
+  if(!txt){toast('Digite uma mensagem');return;}
+  data.ticker=data.ticker||[];
+  data.ticker.push(txt);
+  inp.value='';
+  save(); render();
+  setTimeout(()=>{ const el=$('ticker-input'); if(el) el.focus(); },50);
+}
+
+function delTicker(i){
+  if(!confirm('Remover esta mensagem?'))return;
+  data.ticker.splice(i,1);
+  save(); render();
+}
+
+function moveTicker(i,dir){
+  const arr=data.ticker;
+  const j=i+dir;
+  if(j<0||j>=arr.length)return;
+  [arr[i],arr[j]]=[arr[j],arr[i]];
+  save(); render();
+}
+
+function clearAllTicker(){
+  if(!confirm('Remover TODAS as mensagens do informativo?'))return;
+  data.ticker=[];
+  save(); render();
 }
 
 function setCat(c){ cat=c; render(); }
