@@ -576,46 +576,49 @@ function renderTicker(){
   const speed=t.speed||60;
   const fsize=t.fontSize||13;
   return `
-  <div class="infobox" style="margin-bottom:16px">
-    <b>Informativo (Ticker)</b> — faixa de texto corrido exibida na parte inferior da tela Home do app.<br>
-    Configure abaixo e clique em <b>Publish to Cloud</b> para atualizar o app.
+  <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+    <div class="infobox" style="margin:0;flex:1;min-width:220px">
+      <b>Informativo (Ticker)</b> — faixa de texto corrido na parte inferior da tela Home.<br>
+      Ajuste a velocidade, fonte, adicione mensagens e clique em <b>Publicar</b>.
+    </div>
+    <button class="btn" style="background:rgba(63,185,80,.15);color:var(--ok);border:1px solid rgba(63,185,80,.3);flex-shrink:0;height:fit-content" onclick="openPublish()">
+      <span class="material-icons-round mi">cloud_upload</span>Publicar no App
+    </button>
   </div>
 
   <div class="card" style="margin-bottom:14px">
-    <div class="card-hd"><span class="material-icons-round mi" style="font-size:16px;vertical-align:middle;margin-right:6px">tune</span>Configurações da faixa</div>
-    <div style="padding:16px 18px;display:flex;flex-direction:column;gap:18px">
+    <div class="card-hd">Configurações da faixa</div>
+    <div style="padding:16px 18px">
 
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div style="margin-bottom:16px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
           <label style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px">Velocidade do texto</label>
-          <span style="font-size:12px;color:var(--acc);font-weight:600"><span id="speed-val">${speed}</span> px/s</span>
+          <span style="font-size:12px;color:var(--acc);font-weight:700"><span id="speed-val">${speed}</span> px/s &nbsp;<span style="color:var(--muted);font-weight:400">(menor = mais lento)</span></span>
         </div>
-        <div style="display:flex;align-items:center;gap:12px">
-          <span style="font-size:11px;color:var(--muted);white-space:nowrap">🐢 Lento</span>
+        <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px">
+          <span style="font-size:11px;color:var(--muted)">Lento</span>
           <input type="range" id="ticker-speed" min="20" max="200" step="10" value="${speed}"
-            style="flex:1;accent-color:var(--acc);cursor:pointer"
+            style="width:100%;accent-color:var(--acc);cursor:pointer"
             oninput="$('speed-val').textContent=this.value">
-          <span style="font-size:11px;color:var(--muted);white-space:nowrap">Rápido 🚀</span>
+          <span style="font-size:11px;color:var(--muted)">Rapido</span>
         </div>
-        <div class="hint" style="margin-top:5px">Menor valor = mais lento. Recomendado: 40–80 px/s para leitura confortável na TV.</div>
       </div>
 
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div style="margin-bottom:18px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
           <label style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px">Tamanho da fonte</label>
-          <span style="font-size:12px;color:var(--acc);font-weight:600"><span id="fsize-val">${fsize}</span> sp</span>
+          <span style="font-size:12px;color:var(--acc);font-weight:700"><span id="fsize-val">${fsize}</span> sp</span>
         </div>
-        <div style="display:flex;align-items:center;gap:12px">
-          <span style="font-size:11px;color:var(--muted);white-space:nowrap">A</span>
+        <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px">
+          <span style="font-size:11px;color:var(--muted);font-weight:500">A</span>
           <input type="range" id="ticker-fsize" min="9" max="22" step="1" value="${fsize}"
-            style="flex:1;accent-color:var(--acc);cursor:pointer"
+            style="width:100%;accent-color:var(--acc);cursor:pointer"
             oninput="$('fsize-val').textContent=this.value">
-          <span style="font-size:14px;color:var(--muted);font-weight:600;white-space:nowrap">A</span>
+          <span style="font-size:17px;color:var(--muted);font-weight:700">A</span>
         </div>
-        <div class="hint" style="margin-top:5px">Recomendado: 11–15 sp para boa visibilidade na TV.</div>
       </div>
 
-      <div style="display:flex;justify-content:flex-end;padding-top:4px;border-top:1px solid var(--border)">
+      <div style="border-top:1px solid var(--border);padding-top:14px;display:flex;justify-content:flex-end">
         <button class="btn pri" onclick="saveTickerConfig()">
           <span class="material-icons-round mi">save</span>Salvar configurações
         </button>
@@ -624,10 +627,10 @@ function renderTicker(){
   </div>
 
   <div class="card" style="margin-bottom:14px">
-    <div class="card-hd"><span class="material-icons-round mi" style="font-size:16px;vertical-align:middle;margin-right:6px">add_circle_outline</span>Nova mensagem</div>
-    <div style="padding:14px 18px;display:flex;gap:8px">
-      <input id="ticker-input" placeholder="Ex: Piscina fechada terça 8h–12h. Check-out: 10h00."
-        style="flex:1;padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-family:inherit;font-size:13px;outline:none;transition:border-color .12s"
+    <div class="card-hd">Nova mensagem</div>
+    <div style="padding:12px 16px;display:flex;gap:8px">
+      <input id="ticker-input" placeholder="Ex: Piscina fechada terca 8h-12h. Check-out: 10h00."
+        style="flex:1;min-width:0;padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-family:inherit;font-size:13px;outline:none;transition:border-color .12s"
         onfocus="this.style.borderColor='var(--acc)'" onblur="this.style.borderColor='var(--border)'"
         onkeydown="if(event.key==='Enter')addTicker()">
       <button class="btn pri" onclick="addTicker()" style="flex-shrink:0">
@@ -638,24 +641,26 @@ function renderTicker(){
 
   <div class="card">
     <div class="card-hd">
-      <span><span class="material-icons-round mi" style="font-size:16px;vertical-align:middle;margin-right:6px">list</span>Mensagens (${msgs.length})</span>
+      <span>Mensagens (${msgs.length})</span>
       ${msgs.length?`<button class="btn del sm" onclick="clearAllTicker()"><span class="material-icons-round mi">delete_sweep</span>Limpar tudo</button>`:''}
     </div>
     <ul class="item-list">
       ${msgs.map((m,i)=>`
-      <li class="row">
-        <div class="ricon"><span class="material-icons-round mi">campaign</span></div>
-        <div class="rbody">
-          <div class="rname">${x(m)}</div>
-          <div class="rsub" style="margin-top:2px">Posição ${i+1} de ${msgs.length}</div>
+      <li class="row" style="align-items:flex-start;gap:10px">
+        <div class="ricon" style="flex-shrink:0;margin-top:2px"><span class="material-icons-round mi">campaign</span></div>
+        <div class="rbody" style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:500;line-height:1.4;word-break:break-word;white-space:normal">${x(m)}</div>
+          <div class="rsub" style="margin-top:3px">Posicao ${i+1} de ${msgs.length}</div>
         </div>
-        <div class="racts">
-          ${i>0?`<button class="btn out sm" title="Mover para cima" onclick="moveTicker(${i},-1)"><span class="material-icons-round mi">arrow_upward</span></button>`:''}
-          ${i<msgs.length-1?`<button class="btn out sm" title="Mover para baixo" onclick="moveTicker(${i},1)"><span class="material-icons-round mi">arrow_downward</span></button>`:''}
-          <button class="btn del sm" onclick="delTicker(${i})"><span class="material-icons-round mi">delete</span></button>
+        <div class="racts" style="flex-shrink:0;flex-direction:column;gap:4px;align-items:flex-end">
+          <div style="display:flex;gap:4px">
+            ${i>0?`<button class="btn out sm" onclick="moveTicker(${i},-1)" title="Subir"><span class="material-icons-round mi">arrow_upward</span></button>`:''}
+            ${i<msgs.length-1?`<button class="btn out sm" onclick="moveTicker(${i},1)" title="Descer"><span class="material-icons-round mi">arrow_downward</span></button>`:''}
+            <button class="btn del sm" onclick="delTicker(${i})"><span class="material-icons-round mi">delete</span></button>
+          </div>
         </div>
       </li>`).join('')}
-      ${!msgs.length?'<li class="empty">Nenhuma mensagem ainda — adicione acima e publique no GitHub.</li>':''}
+      ${!msgs.length?'<li class="empty">Nenhuma mensagem ainda — adicione acima e clique em Publicar no App.</li>':''}
     </ul>
   </div>`;
 }
