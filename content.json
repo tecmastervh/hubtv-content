@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T19:28:42.174Z",
+  "updatedAt": "2026-07-04T19:41:42.817Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -464,7 +464,7 @@
     "messages": [
       "Conheça a Master Vacation Homes e viva uma experiência inesquecível em Orlando | 🍽️ Aproveite benefícios exclusivos: ESKINA Restaurant com 10% de desconto | 🍖 ADEGA GAÚCHA com 10% de desconto | 🇺🇸 Happy 4th of July! Celebrando o Independence Day. Desejamos um excelente estadia para você e sua família!"
     ],
-    "speed": 60,
-    "fontSize": 13
+    "speed": 40,
+    "fontSize": 16
   }
 }
