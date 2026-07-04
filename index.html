@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HubTV Admin — Master Vacation Homes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surf:#161b22;--surf2:#1c2129;--border:#30363d;--acc:#ffc107;--acc2:#ffca28;--txt:#e6edf3;--muted:#8b949e;--danger:#f85149;--ok:#3fb950;--blue:#58a6ff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;height:100vh;display:flex;overflow:hidden;font-size:14px}
+
+/* ── Sidebar ── */
+#sb{width:230px;min-width:230px;background:var(--surf);border-right:1px solid var(--border);display:flex;flex-direction:column;height:100vh}
+.sb-logo{padding:18px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.sb-logo .mi{color:var(--acc);font-size:30px}
+.sb-logo b{font-size:15px;line-height:1.2}
+.sb-logo small{color:var(--muted);font-size:11px}
+.nav{list-style:none;padding:6px 0;flex:1;overflow-y:auto}
+.nav li{display:flex;align-items:center;gap:9px;padding:9px 14px;cursor:pointer;border-left:3px solid transparent;color:var(--muted);transition:.12s;font-size:13px;font-weight:500}
+.nav li:hover{background:rgba(255,255,255,.04);color:var(--txt)}
+.nav li.on{border-left-color:var(--acc);color:var(--acc);background:rgba(255,193,7,.07)}
+.nav li .mi{font-size:18px}
+.sb-foot{padding:12px 14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:7px}
+
+/* ── Main ── */
+#main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+#topbar{padding:14px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--surf)}
+#topTitle{font-size:18px;font-weight:600}
+.top-right{display:flex;gap:8px;align-items:center}
+#content{flex:1;overflow-y:auto;padding:22px}
+
+/* ── Buttons ── */
+.btn{padding:7px 14px;border-radius:8px;border:none;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:.12s;white-space:nowrap}
+.btn .mi{font-size:15px}
+.pri{background:var(--acc);color:#000}.pri:hover{background:var(--acc2)}
+.out{background:transparent;color:var(--txt);border:1px solid var(--border)}.out:hover{background:rgba(255,255,255,.05)}
+.del{background:rgba(248,81,73,.15);color:var(--danger);border:1px solid rgba(248,81,73,.3)}.del:hover{background:rgba(248,81,73,.25)}
+.ok-btn{background:rgba(63,185,80,.15);color:var(--ok);border:1px solid rgba(63,185,80,.3)}.ok-btn:hover{background:rgba(63,185,80,.25)}
+.sm{padding:5px 9px;font-size:11px}
+.sm .mi{font-size:14px}
+
+/* ── Cards / Lists ── */
+.card{background:var(--surf);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:14px}
+.card-hd{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-weight:600;font-size:13px}
+.item-list{list-style:none}
+.row{display:flex;align-items:center;padding:11px 16px;border-bottom:1px solid var(--border);gap:11px;transition:.1s}
+.row:last-child{border-bottom:none}
+.row:hover{background:rgba(255,255,255,.03)}
+.ricon{width:34px;height:34px;background:rgba(255,193,7,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--acc);flex-shrink:0}
+.ricon .mi{font-size:18px}
+.rbody{flex:1;min-width:0}
+.rname{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rsub{font-size:11px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.racts{display:flex;gap:5px;align-items:center;flex-shrink:0}
+.empty{padding:20px;text-align:center;color:var(--muted);font-size:13px}
+
+/* ── Cat tabs ── */
+.cat-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.cat-tab{padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:12px;font-weight:500;transition:.12s}
+.cat-tab:hover{border-color:var(--muted);color:var(--txt)}
+.cat-tab.on{background:var(--acc);color:#000;border-color:var(--acc)}
+
+/* ── Badges ── */
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}
+.b-amber{background:rgba(255,193,7,.15);color:var(--acc)}
+.b-blue{background:rgba(88,166,255,.15);color:var(--blue)}
+
+/* ── Count ── */
+.count{font-size:12px;color:var(--muted);margin-bottom:12px}
+
+/* ── Modal ── */
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;z-index:1000}
+.modal{background:var(--surf);border:1px solid var(--border);border-radius:12px;width:580px;max-width:calc(100vw - 24px);max-height:calc(100vh - 60px);display:flex;flex-direction:column}
+.mhd{padding:16px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.mtitle{font-size:15px;font-weight:600}
+.xbtn{background:none;border:none;color:var(--muted);cursor:pointer;display:flex;align-items:center;font-size:22px;padding:2px}
+.xbtn:hover{color:var(--txt)}
+.mbody{padding:18px;overflow-y:auto;flex:1}
+.mfoot{padding:12px 18px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px}
+
+/* ── Form ── */
+.f{margin-bottom:14px}
+.f label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.f input,.f textarea,.f select{width:100%;padding:8px 11px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-family:inherit;font-size:13px;outline:none;transition:border-color .12s}
+.f input:focus,.f textarea:focus,.f select:focus{border-color:var(--acc)}
+.f textarea{resize:vertical;min-height:75px}
+.f select option{background:var(--surf)}
+.frow{display:flex;gap:11px}.frow .f{flex:1}
+.hint{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* ── Detail rows ── */
+.dl{list-style:none;margin-bottom:8px}
+.dr{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 10px;display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.dr select{background:transparent;border:none;color:var(--muted);font-size:11px;outline:none;width:85px;flex-shrink:0}
+.dr input{background:none;border:none;color:var(--txt);font-size:12px;outline:none;flex:1;min-width:0}
+.dr .sep{color:var(--border)}
+.dr label{display:flex;align-items:center;gap:3px;font-size:11px;color:var(--muted);cursor:pointer;white-space:nowrap}
+.add-dr{width:100%;padding:8px;background:var(--bg);border:1px dashed var(--border);border-radius:8px;color:var(--muted);cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;gap:5px;transition:.12s;font-family:inherit}
+.add-dr:hover{border-color:var(--acc);color:var(--acc)}
+
+/* ── Login ── */
+#login{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:2000}
+.lcard{background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:40px;width:360px;text-align:center}
+.lcard .mi{font-size:50px;color:var(--acc);margin-bottom:14px;display:block}
+.lcard h2{font-size:22px;margin-bottom:4px}
+.lcard p{font-size:12px;color:var(--muted);margin-bottom:26px}
+.lerr{color:var(--danger);font-size:12px;margin-top:10px}
+
+/* ── Toast ── */
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:#2d333b;color:var(--txt);padding:10px 20px;border-radius:8px;font-size:13px;z-index:3000;transition:transform .25s;pointer-events:none;border:1px solid var(--border)}
+#toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ── Info box ── */
+.infobox{background:rgba(88,166,255,.07);border:1px solid rgba(88,166,255,.2);border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:12px;color:#93c8ff;line-height:1.6}
+.infobox b{color:var(--blue)}
+.infobox code{background:rgba(88,166,255,.12);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:11px}
+</style>
+</head>
+<body>
+
+<!-- ── Login ── -->
+<div id="login">
+  <div class="lcard">
+    <span class="material-icons-round mi">connected_tv</span>
+    <h2>HubTV Admin</h2>
+    <p>Master Vacation Homes — Content Management</p>
+    <div class="f"><input type="password" id="lpwd" placeholder="Administrator password" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <button class="btn pri" style="width:100%;justify-content:center" onclick="doLogin()">
+      <span class="material-icons-round mi">lock_open</span> Sign In
+    </button>
+    <div class="lerr" id="lerr"></div>
+  </div>
+</div>
+
+<!-- ── App ── -->
+<div id="app" style="display:none">
+  <!-- Sidebar -->
+  <nav id="sb">
+    <div class="sb-logo">
+      <span class="material-icons-round mi">connected_tv</span>
+      <div><b>HubTV Admin</b><br><small>Master Vacation Homes</small></div>
+    </div>
+    <ul class="nav" id="nav">
+      <li class="on" data-s="houseGuide"  onclick="go('houseGuide')"><span class="material-icons-round mi">home</span>House Guide</li>
+      <li data-s="services"   onclick="go('services')"><span class="material-icons-round mi">room_service</span>Services</li>
+      <li data-s="localGuide" onclick="go('localGuide')"><span class="material-icons-round mi">place</span>Local Guide</li>
+      <!-- <li data-s="orders" onclick="go('orders')"><span class="material-icons-round mi">shopping_cart</span>My Orders</li> hidden — not yet defined -->
+      <li data-s="apps"       onclick="go('apps')"><span class="material-icons-round mi">apps</span>Apps</li>
+      <li data-s="coupons" onclick="go('coupons')"><span class="material-icons-round mi">local_offer</span>Coupons</li>
+    </ul>
+    <div class="sb-foot">
+      <button class="btn" style="background:rgba(63,185,80,.15);color:var(--ok);border:1px solid rgba(63,185,80,.3)" onclick="openPublish()"><span class="material-icons-round mi">cloud_upload</span>Publish to Cloud</button>
+      <button class="btn pri" onclick="exportJSON()"><span class="material-icons-round mi">download</span>Export JSON</button>
+      <button class="btn out" onclick="$('imp').click()"><span class="material-icons-round mi">upload</span>Import JSON</button>
+      <input type="file" id="imp" style="display:none" accept=".json" onchange="importJSON(this)">
+      <button class="btn out" style="color:var(--danger);border-color:rgba(248,81,73,.3)" onclick="doLogout()"><span class="material-icons-round mi">logout</span>Sign Out</button>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <div id="main">
+    <div id="topbar">
+      <div id="topTitle">House Guide</div>
+      <div class="top-right">
+        <button class="btn pri" id="addBtn" onclick="openAdd()"><span class="material-icons-round mi">add</span>Add Item</button>
+      </div>
+    </div>
+    <div id="content"></div>
+  </div>
+</div>
+
+<!-- ── Modal ── -->
+<div class="backdrop" id="modal" style="display:none">
+  <div class="modal">
+    <div class="mhd">
+      <div class="mtitle" id="mtitle">Add Item</div>
+      <button class="xbtn" onclick="closeModal()"><span class="material-icons-round">close</span></button>
+    </div>
+    <div class="mbody" id="mbody"></div>
+    <div class="mfoot">
+      <button class="btn out" onclick="closeModal()">Cancel</button>
+      <button class="btn pri" onclick="saveItem()"><span class="material-icons-round mi">save</span>Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Publish Modal ── -->
+<div class="backdrop" id="pub-modal" style="display:none" onclick="if(event.target===this)closePublish()">
+  <div class="modal" style="width:580px">
+    <div class="mhd">
+      <div class="mtitle"><span class="material-icons-round mi" style="vertical-align:middle;font-size:18px;color:var(--ok);margin-right:6px">cloud_upload</span>Publish to GitHub</div>
+      <button class="xbtn" onclick="closePublish()"><span class="material-icons-round">close</span></button>
+    </div>
+    <div class="mbody" style="display:flex;flex-direction:column;gap:14px">
+      <div class="infobox">
+        <b>Hospedagem gratuita e ilimitada via GitHub:</b><br>
+        O conteúdo é salvo em <b>github.com/tecmastervh/hubtv-content</b> e lido pelo app via URL pública.<br>
+        Após o primeiro publish, copie a URL para o campo <b>Content URL</b> no app (Settings).
+      </div>
+      <div class="f">
+        <label>GitHub Personal Access Token</label>
+        <input type="password" id="pub-gh-token" placeholder="github_pat_..." autocomplete="off">
+        <div class="hint">Armazenado apenas neste navegador (localStorage). Nunca enviado a terceiros.</div>
+      </div>
+      <div id="pub-result" style="display:none;background:rgba(63,185,80,.1);border:1px solid var(--ok);border-radius:8px;padding:12px 14px;font-size:12px">
+        <div style="color:var(--ok);font-weight:600;margin-bottom:6px">✓ Publicado com sucesso!</div>
+        <div style="color:var(--muted);margin-bottom:4px">Content URL (copie para o Settings do app):</div>
+        <div style="display:flex;align-items:center;gap:7px">
+          <code id="pub-url-txt" style="flex:1;background:var(--bg);padding:6px 10px;border-radius:6px;border:1px solid var(--border);font-size:11px;word-break:break-all;font-family:monospace"></code>
+          <button class="btn out sm" onclick="copyPubUrl()"><span class="material-icons-round mi">content_copy</span>Copy</button>
+        </div>
+      </div>
+      <div id="pub-err" style="display:none;color:var(--danger);font-size:12px;padding:8px 12px;background:rgba(248,81,73,.08);border:1px solid rgba(248,81,73,.3);border-radius:8px"></div>
+    </div>
+    <div class="mfoot">
+      <button class="btn out" onclick="closePublish()">Fechar</button>
+      <button class="btn" id="pub-btn" style="background:rgba(63,185,80,.15);color:var(--ok);border:1px solid rgba(63,185,80,.3)" onclick="publishToGitHub()">
+        <span class="material-icons-round mi" id="pub-ico">cloud_upload</span><span id="pub-lbl">Publish Now</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast ── -->
+<div id="toast"></div>
+
+<script>
+// ── Auth ───────────────────────────────────────────────────────────────────
+const PWD = 'master2025';
+function doLogin(){
+  if($('lpwd').value===PWD){
+    $('login').style.display='none';
+    $('app').style.display='flex';
+    localStorage.setItem('hubtv_auth','1');
+    init();
+  } else { $('lerr').textContent='Incorrect password.'; }
+}
+function doLogout(){ localStorage.removeItem('hubtv_auth'); location.reload(); }
+if(localStorage.getItem('hubtv_auth')==='1'){
+  document.addEventListener('DOMContentLoaded',()=>{ doLogin(); $('lpwd').value=PWD; });
+}
+
+// ── Constants ──────────────────────────────────────────────────────────────
+const SECS={
+  houseGuide:{label:'House Guide',icon:'home'},
+  services:{label:'Services',icon:'room_service'},
+  localGuide:{label:'Local Guide',icon:'place'},
+  orders:{label:'My Orders',icon:'shopping_cart'},
+  apps:{label:'Apps',icon:'apps'},
+  coupons:{label:'Coupons',icon:'local_offer'},
+};
+const CAT_SERVICES=['Grocery','Transportation','Medical','Maintenance','Emergency','Fast Food'];
+const CAT_LOCAL=['Restaurants','Quick Bites','Shopping','Attractions','Pharmacy','Grocery'];
+const HICONS=['wifi','pool','local_parking','delete_outline','exit_to_app','rule',
+              'kitchen','microwave','tv','bed','ac_unit','local_laundry_service',
+              'lock','vpn_key','info','help_outline','check_circle'];
+const DICONS=['router','lock_open','help_outline','schedule','no_drinks','child_care',
+              'waves','directions_car','block','warning_amber','calendar_today',
+              'access_time','recycling','vpn_key','thermostat','smoke_free',
+              'celebration','pets','volume_off','info','phone','place','star','check'];
+
+// ── Default data ───────────────────────────────────────────────────────────
+const DEF={
+  houseGuide:[
+    {id:'wifi',title:'Wi-Fi',icon:'wifi',
+     imageUrl:'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80',
+     details:[{icon:'router',label:'Network',value:'mastervacationhomes.com',highlight:false},
+              {icon:'lock_open',label:'Password',value:'welcometoorlando',highlight:true},
+              {icon:'help_outline',label:'Issues?',value:'Contact our support team',highlight:false}]},
+    {id:'pool',title:'Pool',icon:'pool',
+     imageUrl:'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=900&q=80',
+     details:[{icon:'schedule',label:'Hours',value:'8:00 AM – 10:00 PM',highlight:true},
+              {icon:'no_drinks',label:'No Glass',value:'No glass containers in pool area',highlight:false},
+              {icon:'child_care',label:'Supervision',value:'Children must be supervised at all times',highlight:false},
+              {icon:'waves',label:'No Diving',value:'Shallow water — diving strictly prohibited',highlight:false}]},
+    {id:'parking',title:'Parking',icon:'local_parking',
+     imageUrl:'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=900&q=80',
+     details:[{icon:'directions_car',label:'Assigned Spots',value:'Use only designated spots for this unit',highlight:false},
+              {icon:'block',label:'Restrictions',value:'No parking on grass or blocking neighbors',highlight:false},
+              {icon:'warning_amber',label:'Enforcement',value:'Unauthorized vehicles may be towed',highlight:false}]},
+    {id:'trash',title:'Trash Collection',icon:'delete_outline',
+     imageUrl:'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80',
+     details:[{icon:'calendar_today',label:'Pickup Days',value:'Monday and Thursday',highlight:true},
+              {icon:'access_time',label:'Time',value:'Place bins at curb by 7:00 AM',highlight:false},
+              {icon:'recycling',label:'Recycling',value:'Blue bin: plastics, paper and cans',highlight:false}]},
+    {id:'checkout',title:'Check-out',icon:'exit_to_app',
+     imageUrl:'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80',
+     details:[{icon:'schedule',label:'Check-out Time',value:'Before 11:00 AM',highlight:true},
+              {icon:'vpn_key',label:'Keys',value:'Return keys to the lock box before leaving',highlight:false},
+              {icon:'thermostat',label:'Thermostat',value:'Set to 78°F before departure',highlight:false}]},
+    {id:'rules',title:'House Rules',icon:'rule',
+     imageUrl:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80',
+     details:[{icon:'smoke_free',label:'No Smoking',value:'Strictly no smoking inside the property',highlight:false},
+              {icon:'celebration',label:'No Parties',value:'No events or gatherings beyond registered guests',highlight:false},
+              {icon:'pets',label:'No Pets',value:'Unless pre-approved — contact us in advance',highlight:false},
+              {icon:'volume_off',label:'Quiet Hours',value:'10:00 PM – 8:00 AM',highlight:false}]},
+  ],
+  services:{
+    Grocery:[{name:'Walmart Supercenter',address:'3250 Vineland Rd, Kissimmee, FL',phone:'(407) 397-1799',hours:'6AM–11PM',rating:'4.1',imageUrl:''}],
+    Transportation:[{name:'Lyft / Uber',address:'App-based',phone:'',hours:'24/7',rating:'4.5',imageUrl:''}],
+    Medical:[{name:'CVS MinuteClinic',address:'3001 W Vine St, Kissimmee',phone:'(407) 846-5570',hours:'8AM–8PM',rating:'4.0',imageUrl:''}],
+    Maintenance:[{name:'Property Management',address:'',phone:'+1 (888) 123-4567',hours:'9AM–5PM',rating:'',imageUrl:''}],
+    Emergency:[{name:'Emergency Services',address:'',phone:'911',hours:'24/7',rating:'',imageUrl:''}],
+    'Fast Food':[{name:"McDonald's",address:'8001 W Irlo Bronson Hwy',phone:'(407) 396-8070',hours:'6AM–12AM',rating:'3.8',imageUrl:''}],
+  },
+  localGuide:{
+    Restaurants:[{name:'Longhorn Steakhouse',address:'7804 W Irlo Bronson Hwy, Kissimmee',phone:'(407) 390-1234',rating:'4.3',imageUrl:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80',website:''}],
+    'Quick Bites':[{name:"McDonald's",address:'8001 W Irlo Bronson Hwy',phone:'',rating:'3.8',imageUrl:'',website:''}],
+    Shopping:[{name:'Orlando Vineland Premium Outlets',address:'8200 Vineland Ave, Orlando',phone:'(407) 238-7787',rating:'4.4',imageUrl:'',website:'premiumoutlets.com/outlet/orlando-vineland'}],
+    Attractions:[{name:'Walt Disney World',address:'Orlando, FL',phone:'(407) 939-5277',rating:'4.7',imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cinderella_Castle_at_Magic_Kingdom.jpg/800px-Cinderella_Castle_at_Magic_Kingdom.jpg',website:'disneyworld.disney.go.com'}],
+    Pharmacy:[{name:'Walgreens',address:'7848 W Irlo Bronson Hwy',phone:'(407) 397-1023',rating:'3.9',imageUrl:'',website:''}],
+    Grocery:[{name:'Publix',address:'7805 W Irlo Bronson Hwy',phone:'(407) 396-6594',rating:'4.4',imageUrl:'',website:''}],
+  },
+  orders:[
+    {id:'1',name:'Welcome Package',category:'Extras',description:'Champagne, chocolates & flowers',price:'$49.99',imageUrl:''},
+    {id:'2',name:'Early Check-in (10AM)',category:'Stay',description:'Check in from 10:00 AM instead of 4:00 PM',price:'$50.00',imageUrl:''},
+    {id:'3',name:'Late Check-out (2PM)',category:'Stay',description:'Check out until 2:00 PM instead of 11:00 AM',price:'$50.00',imageUrl:''},
+    {id:'4',name:'Pool Heating',category:'Extras',description:'Heated pool for duration of your stay',price:'$75.00',imageUrl:''},
+  ],
+  coupons:[],
+  apps:[
+    {id:'1',name:'Netflix',packageName:'com.netflix.mediaclient',iconUrl:'',order:1},
+    {id:'2',name:'Disney+',packageName:'com.disney.disneyplus',iconUrl:'',order:2},
+    {id:'3',name:'YouTube',packageName:'com.google.android.youtube.tv',iconUrl:'',order:3},
+    {id:'4',name:'Amazon Prime Video',packageName:'com.amazon.amazonvideo.livingroom',iconUrl:'',order:4},
+    {id:'5',name:'HBO Max',packageName:'com.hbo.hbonow',iconUrl:'',order:5},
+    {id:'6',name:'Hulu',packageName:'com.hulu.plus',iconUrl:'',order:6},
+    {id:'7',name:'Peacock',packageName:'com.peacocktv.peacockandroid',iconUrl:'',order:7},
+    {id:'8',name:'Spotify',packageName:'com.spotify.music',iconUrl:'',order:8},
+  ],
+};
+
+// ── State ──────────────────────────────────────────────────────────────────
+let sec='houseGuide', cat=null, editing=null, data={};
+
+function init(){
+  const s=localStorage.getItem('hubtv_data');
+  data=s?JSON.parse(s):JSON.parse(JSON.stringify(DEF));
+  data.coupons = data.coupons || [];
+  cat=CAT_SERVICES[0];
+  render();
+}
+
+function save(msg){
+  localStorage.setItem('hubtv_data',JSON.stringify(data));
+  if(msg!==false) toast(msg||'Saved ✓');
+}
+
+function go(s){
+  sec=s; editing=null;
+  cat=(s==='services'?CAT_SERVICES:s==='localGuide'?CAT_LOCAL:[])[0]||null;
+  document.querySelectorAll('.nav li').forEach(el=>el.classList.toggle('on',el.dataset.s===s));
+  $('topTitle').textContent=SECS[s].label;
+  $('addBtn').style.display = (s==='coupons') ? 'none' : '';
+  render();
+}
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function render(){
+  const el=$('content');
+  el.innerHTML=({
+    houseGuide:renderHG,
+    services:renderCat.bind(null,'services',CAT_SERVICES),
+    localGuide:renderCat.bind(null,'localGuide',CAT_LOCAL),
+    orders:renderOrders,
+    apps:renderApps,
+    coupons:renderCoupons,
+  }[sec])();
+}
+
+function renderHG(){
+  const items=data.houseGuide;
+  return `
+  <p class="count">${items.length} section${items.length!==1?'s':''}</p>
+  <div class="card"><ul class="item-list">
+    ${items.map(it=>`
+    <li class="row">
+      <div class="ricon"><span class="material-icons-round mi">${it.icon}</span></div>
+      <div class="rbody"><div class="rname">${x(it.title)}</div><div class="rsub">${it.details.length} detail row${it.details.length!==1?'s':''}</div></div>
+      <div class="racts">
+        <button class="btn out sm" onclick='openEdit(${JSON.stringify(it.id)})'><span class="material-icons-round mi">edit</span>Edit</button>
+        <button class="btn del sm" onclick='del(${JSON.stringify(it.id)})'><span class="material-icons-round mi">delete</span></button>
+      </div>
+    </li>`).join('')}
+    ${!items.length?'<li class="empty">No sections yet — click Add Item</li>':''}
+  </ul></div>`;
+}
+
+function renderCat(s,cats){
+  const items=(data[s][cat]||[]);
+  return `
+  <div class="cat-tabs">
+    ${cats.map(c=>`<button class="cat-tab ${c===cat?'on':''}" onclick="setCat('${c}')">${c}</button>`).join('')}
+  </div>
+  <p class="count">${items.length} item${items.length!==1?'s':''} in ${cat}</p>
+  <div class="card"><ul class="item-list">
+    ${items.map((it,i)=>`
+    <li class="row">
+      <div class="rbody">
+        <div class="rname">${x(it.name)}</div>
+        <div class="rsub">${[it.address,it.phone,it.hours||it.website].filter(Boolean).join(' · ')}</div>
+      </div>
+      <div class="racts">
+        ${it.rating?`<span class="badge b-amber">★ ${it.rating}</span>`:''}
+        <button class="btn out sm" onclick="openEdit(${i})"><span class="material-icons-round mi">edit</span>Edit</button>
+        <button class="btn del sm" onclick="del(${i})"><span class="material-icons-round mi">delete</span></button>
+      </div>
+    </li>`).join('')}
+    ${!items.length?'<li class="empty">No items in this category yet</li>':''}
+  </ul></div>`;
+}
+
+function renderOrders(){
+  const items=data.orders;
+  return `
+  <p class="count">${items.length} order item${items.length!==1?'s':''}</p>
+  <div class="card"><ul class="item-list">
+    ${items.map((it,i)=>`
+    <li class="row">
+      <div class="rbody">
+        <div class="rname">${x(it.name)}</div>
+        <div class="rsub">${x(it.category)} · <b style="color:var(--acc)">${x(it.price)}</b></div>
+      </div>
+      <div class="racts">
+        <button class="btn out sm" onclick="openEdit(${i})"><span class="material-icons-round mi">edit</span>Edit</button>
+        <button class="btn del sm" onclick="del(${i})"><span class="material-icons-round mi">delete</span></button>
+      </div>
+    </li>`).join('')}
+    ${!items.length?'<li class="empty">No order items yet</li>':''}
+  </ul></div>`;
+}
+
+function renderApps(){
+  const items=[...data.apps].sort((a,b)=>a.order-b.order);
+  return `
+  <div class="infobox"><b>Fire TV Package Names:</b> Use the official Android package ID for each app so the TV can launch it. Examples: <code>com.netflix.mediaclient</code>, <code>com.disney.disneyplus</code>, <code>com.google.android.youtube.tv</code></div>
+  <p class="count">${items.length} app${items.length!==1?'s':''} configured</p>
+  <div class="card"><ul class="item-list">
+    ${items.map((it,i)=>`
+    <li class="row">
+      <div class="ricon"><span class="material-icons-round mi">smart_display</span></div>
+      <div class="rbody">
+        <div class="rname">${x(it.name)}</div>
+        <div class="rsub">${x(it.packageName)} · order: ${it.order}</div>
+      </div>
+      <div class="racts">
+        <button class="btn out sm" onclick="openEdit(${i})"><span class="material-icons-round mi">edit</span>Edit</button>
+        <button class="btn del sm" onclick="del(${i})"><span class="material-icons-round mi">delete</span></button>
+      </div>
+    </li>`).join('')}
+    ${!items.length?'<li class="empty">No apps configured yet</li>':''}
+  </ul></div>`;
+}
+
+const GH_COUPONS_RAW='https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/coupons.json';
+const GH_COUPONS_API='https://api.github.com/repos/tecmastervh/hubtv-content/contents/coupons.json';
+
+function couponQrData(c){
+  return `CODE:${c.code}\nGUEST:${c.guestName||''}\nUNIT:${c.unitAddress||''}\nPERIOD:${c.period||''}\nPLACE:${c.placeName} (${c.category})`;
+}
+function couponQrUrl(c){
+  return `https://api.qrserver.com/v1/create-qr-code/?size=100x100&format=png&data=${encodeURIComponent(couponQrData(c))}`;
+}
+
+async function loadCouponsFromGitHub(){
+  const btn=$('gh-coupons-btn');
+  btn.disabled=true; btn.textContent='Carregando…';
+  try{
+    const res=await fetch(GH_COUPONS_RAW+'?nocache='+Date.now());
+    if(res.status===404){
+      // File doesn't exist yet — no coupons generated
+      data.coupons=[]; save(false); render();
+      toast('Nenhum cupom ainda no GitHub.');
+    } else if(!res.ok){
+      throw new Error('HTTP '+res.status);
+    } else {
+      const list=await res.json();
+      data.coupons=Array.isArray(list)?list:[];
+      save(false); render();
+      toast('Cupons carregados ✓ ('+data.coupons.length+')');
+    }
+  }catch(e){
+    toast('Erro ao carregar cupons: '+e.message);
+  }
+  btn.disabled=false; btn.textContent='Atualizar do GitHub';
+}
+
+async function clearCouponsOnGitHub(){
+  const token=(localStorage.getItem('hubtv_gh_token')||'').trim();
+  if(!token){toast('Configure o GitHub Token no Publish primeiro.');return;}
+  if(!confirm('Apagar TODOS os cupons do GitHub? Esta ação não pode ser desfeita.'))return;
+  const headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'};
+  try{
+    const getRes=await fetch(GH_COUPONS_API,{headers});
+    if(!getRes.ok) throw new Error('HTTP '+getRes.status);
+    const j=await getRes.json();
+    const encoded=btoa(unescape(encodeURIComponent('[]')));
+    await fetch(GH_COUPONS_API,{method:'PUT',headers,body:JSON.stringify({message:'Clear coupons',content:encoded,sha:j.sha})});
+    data.coupons=[]; save(false); render(); toast('Cupons apagados ✓');
+  }catch(e){toast('Erro: '+e.message);}
+}
+
+function renderCoupons(){
+  const coupons=(data.coupons||[]).slice().reverse();
+  const byCategory={};
+  coupons.forEach(c=>{byCategory[c.category]=(byCategory[c.category]||0)+1;});
+  const catRows=Object.entries(byCategory).sort((a,b)=>b[1]-a[1])
+    .map(([cat,n])=>`<span class="badge b-amber" style="margin-right:6px">${x(cat)}: ${n}</span>`).join('');
+  return `
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:8px;flex-wrap:wrap">
+    <div style="font-size:13px;color:var(--muted)">Cupons gerados pelo app, sincronizados via GitHub.</div>
+    <div style="display:flex;gap:8px">
+      <button id="gh-coupons-btn" class="btn ok-btn sm" onclick="loadCouponsFromGitHub()">
+        <span class="material-icons-round mi">sync</span>Atualizar do GitHub
+      </button>
+      <button class="btn del sm" onclick="clearCouponsOnGitHub()">
+        <span class="material-icons-round mi">delete_sweep</span>Limpar tudo
+      </button>
+    </div>
+  </div>
+  <div style="display:flex;gap:14px;margin-bottom:18px;flex-wrap:wrap">
+    <div class="card" style="flex:1;min-width:140px;margin:0;padding:16px 18px;text-align:center">
+      <div style="font-size:32px;font-weight:700;color:var(--acc)">${coupons.length}</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:2px">Total Coupons</div>
+    </div>
+    <div class="card" style="flex:3;min-width:200px;margin:0;padding:14px 16px;display:flex;align-items:center;flex-wrap:wrap;gap:6px">
+      ${catRows||'<span style="color:var(--muted);font-size:12px">No coupons yet</span>'}
+    </div>
+  </div>
+  <div class="card"><ul class="item-list">
+    ${coupons.length?coupons.map(c=>`
+    <li class="row" style="align-items:flex-start;padding:14px 16px;gap:14px">
+      <img src="${couponQrUrl(c)}" width="80" height="80"
+           style="border-radius:6px;border:1px solid var(--border);flex-shrink:0;background:#fff"
+           loading="lazy" alt="QR">
+      <div class="rbody" style="flex:1;min-width:0">
+        <div class="rname" style="margin-bottom:4px">
+          ${x(c.placeName)}
+          <span class="badge b-amber" style="margin-left:8px;font-size:12px;letter-spacing:1px">${x(c.code)}</span>
+          <span class="badge" style="margin-left:6px;background:rgba(255,255,255,.06);color:var(--muted)">${x(c.category)}</span>
+        </div>
+        <div class="rsub" style="margin-bottom:3px">
+          <span class="material-icons-round mi" style="font-size:13px;vertical-align:middle;margin-right:3px">person</span>${x(c.guestName||'—')}
+          &nbsp;&nbsp;
+          <span class="material-icons-round mi" style="font-size:13px;vertical-align:middle;margin-right:3px">home</span>${x(c.unitAddress||'Unit '+c.unitId)}
+        </div>
+        <div class="rsub">
+          <span class="material-icons-round mi" style="font-size:13px;vertical-align:middle;margin-right:3px">date_range</span>${x(c.period||'—')}
+          &nbsp;&nbsp;
+          <span style="color:var(--muted);font-size:11px">${new Date(c.timestamp).toLocaleString()}</span>
+        </div>
+      </div>
+    </li>`).join(''):'<li class="empty">Nenhum cupom gerado ainda. Clique em "Atualizar do GitHub" para sincronizar.</li>'}
+  </ul></div>`;
+}
+
+function setCat(c){ cat=c; render(); }
+
+// ── Modal ──────────────────────────────────────────────────────────────────
+function openAdd(){ editing=null; $('mtitle').textContent='Add Item'; $('mbody').innerHTML=buildForm(null); $('modal').style.display='flex'; }
+function openEdit(id){
+  editing=id;
+  let it=null;
+  if(sec==='houseGuide') it=data.houseGuide.find(x=>x.id===id);
+  else if(sec==='services'||sec==='localGuide') it=(data[sec][cat]||[])[id];
+  else if(sec==='orders') it=data.orders[id];
+  else if(sec==='apps') it=data.apps[id];
+  $('mtitle').textContent='Edit Item'; $('mbody').innerHTML=buildForm(it); $('modal').style.display='flex';
+}
+function closeModal(){ $('modal').style.display='none'; editing=null; }
+
+function buildForm(it){
+  if(sec==='houseGuide') return fmHG(it);
+  if(sec==='services'||sec==='localGuide') return fmPlace(it);
+  if(sec==='orders') return fmOrder(it);
+  if(sec==='apps') return fmApp(it);
+}
+
+function fmHG(it){
+  const dOpts=DICONS.map(i=>`<option value="${i}">${i}</option>`).join('');
+  const dRows=(it?.details||[]).map((d,i)=>`
+  <div class="dr" id="dr${i}">
+    <select class="ds">${DICONS.map(ic=>`<option value="${ic}" ${d.icon===ic?'selected':''}>${ic}</option>`).join('')}</select>
+    <span class="sep">|</span><input class="dl" placeholder="Label" value="${x(d.label)}">
+    <span class="sep">→</span><input class="dv" placeholder="Value" value="${x(d.value)}" style="flex:2">
+    <label><input type="checkbox" class="dh" ${d.highlight?'checked':''}> ★</label>
+    <button class="btn del sm" onclick="this.closest('.dr').remove()" style="padding:4px 6px"><span class="material-icons-round" style="font-size:13px">close</span></button>
+  </div>`).join('');
+  return `
+  <div class="frow"><div class="f"><label>Title</label><input id="ft" value="${x(it?.title||'')}" placeholder="Wi-Fi, Pool..."></div>
+  <div class="f" style="flex:0 0 145px"><label>Icon name</label>
+    <select id="fi">${HICONS.map(ic=>`<option value="${ic}" ${it?.icon===ic?'selected':''}>${ic}</option>`).join('')}</select></div></div>
+  <div class="f"><label>Image URL</label><input id="fimg" value="${x(it?.imageUrl||'')}" placeholder="https://..."></div>
+  <div class="f"><label>Detail Rows</label>
+    <div id="dlist">${dRows}</div>
+    <button class="add-dr" onclick="addDr()"><span class="material-icons-round mi">add</span>Add row</button>
+  </div>`;
+}
+
+function fmPlace(it){
+  const cats=sec==='services'?CAT_SERVICES:CAT_LOCAL;
+  return `
+  <div class="frow">
+    <div class="f"><label>Category</label>
+      <select id="fcat">${cats.map(c=>`<option value="${c}" ${(cat===c)?'selected':''}>${c}</option>`).join('')}</select></div>
+    <div class="f" style="flex:0 0 90px"><label>Rating</label><input id="frat" value="${x(it?.rating||'')}" placeholder="4.5"></div>
+  </div>
+  <div class="f"><label>Name *</label><input id="fn" value="${x(it?.name||'')}" placeholder="Business name"></div>
+  <div class="f"><label>Address</label><input id="fadr" value="${x(it?.address||'')}" placeholder="123 Main St, Kissimmee, FL"></div>
+  <div class="frow">
+    <div class="f"><label>Phone</label><input id="fph" value="${x(it?.phone||'')}" placeholder="(407) 555-0123"></div>
+    ${sec==='services'?`<div class="f"><label>Hours</label><input id="fhr" value="${x(it?.hours||'')}" placeholder="9AM–9PM"></div>`:
+      `<div class="f"><label>Website</label><input id="fweb" value="${x(it?.website||'')}" placeholder="example.com"></div>`}
+  </div>
+  <div class="f"><label>Image URL</label><input id="fimg" value="${x(it?.imageUrl||'')}" placeholder="https://..."></div>`;
+}
+
+function fmOrder(it){
+  return `
+  <div class="frow">
+    <div class="f"><label>Name *</label><input id="fn" value="${x(it?.name||'')}" placeholder="Welcome Package"></div>
+    <div class="f" style="flex:0 0 120px"><label>Price</label><input id="fpr" value="${x(it?.price||'')}" placeholder="$49.99"></div>
+  </div>
+  <div class="f"><label>Category</label><input id="fcat" value="${x(it?.category||'')}" placeholder="Extras, Stay, Cleaning..."></div>
+  <div class="f"><label>Description</label><textarea id="fdesc" placeholder="Describe this add-on...">${x(it?.description||'')}</textarea></div>
+  <div class="f"><label>Image URL</label><input id="fimg" value="${x(it?.imageUrl||'')}" placeholder="https://..."></div>`;
+}
+
+function fmApp(it){
+  return `
+  <div class="f"><label>App Name *</label><input id="fn" value="${x(it?.name||'')}" placeholder="Netflix"></div>
+  <div class="f"><label>Package Name</label><input id="fpkg" value="${x(it?.packageName||'')}" placeholder="com.netflix.mediaclient">
+    <div class="hint">Android package ID — used by Fire TV to launch the app</div></div>
+  <div class="f"><label>Icon URL (optional)</label><input id="fimg" value="${x(it?.iconUrl||'')}" placeholder="https://..."></div>
+  <div class="f" style="max-width:140px"><label>Display Order</label><input id="ford" type="number" value="${it?.order||data.apps.length+1}" min="1"></div>`;
+}
+
+function addDr(){
+  const l=$('dlist'); const i=l.querySelectorAll('.dr').length;
+  const d=document.createElement('div'); d.className='dr'; d.id='dr'+i;
+  d.innerHTML=`<select class="ds">${DICONS.map(ic=>`<option value="${ic}">${ic}</option>`).join('')}</select>
+    <span class="sep">|</span><input class="dl" placeholder="Label">
+    <span class="sep">→</span><input class="dv" placeholder="Value" style="flex:2">
+    <label><input type="checkbox" class="dh"> ★</label>
+    <button class="btn del sm" onclick="this.closest('.dr').remove()" style="padding:4px 6px"><span class="material-icons-round" style="font-size:13px">close</span></button>`;
+  l.appendChild(d);
+}
+
+// ── Save handlers ──────────────────────────────────────────────────────────
+function saveItem(){
+  if(sec==='houseGuide')               saveHG();
+  else if(sec==='services'||sec==='localGuide') savePlace();
+  else if(sec==='orders')              saveOrder();
+  else if(sec==='apps')                saveApp();
+}
+
+function saveHG(){
+  const title=($('ft')||{}).value?.trim();
+  if(!title){ toast('Title is required'); return; }
+  const icon=$('fi').value, img=$('fimg').value.trim();
+  const drs=[...(($('dlist')||{}).querySelectorAll?.('.dr')||[])];
+  const details=drs.map(r=>({
+    icon:r.querySelector('.ds').value,
+    label:r.querySelector('.dl').value.trim(),
+    value:r.querySelector('.dv').value.trim(),
+    highlight:r.querySelector('.dh').checked,
+  })).filter(d=>d.label||d.value);
+  if(editing!=null){
+    const i=data.houseGuide.findIndex(v=>v.id===editing);
+    if(i>=0) data.houseGuide[i]={id:editing,title,icon,imageUrl:img,details};
+  } else {
+    const id='item_'+Date.now();
+    data.houseGuide.push({id,title,icon,imageUrl:img,details});
+  }
+  save(); closeModal(); render();
+}
+
+function savePlace(){
+  const name=($('fn')||{}).value?.trim();
+  if(!name){ toast('Name is required'); return; }
+  const nc=$('fcat').value;
+  const it={name,address:$('fadr')?.value.trim()||'',phone:$('fph')?.value.trim()||'',
+             rating:$('frat')?.value.trim()||'',imageUrl:$('fimg')?.value.trim()||''};
+  if(sec==='services') it.hours=$('fhr')?.value.trim()||'';
+  else it.website=$('fweb')?.value.trim()||'';
+  if(!data[sec][nc]) data[sec][nc]=[];
+  if(editing!=null) data[sec][nc][editing]=it;
+  else data[sec][nc].push(it);
+  cat=nc; save(); closeModal(); render();
+}
+
+function saveOrder(){
+  const name=($('fn')||{}).value?.trim();
+  if(!name){ toast('Name is required'); return; }
+  const it={id:editing!=null?data.orders[editing].id:String(Date.now()),
+             name,category:$('fcat').value.trim(),description:$('fdesc').value.trim(),
+             price:$('fpr').value.trim(),imageUrl:$('fimg')?.value.trim()||''};
+  if(editing!=null) data.orders[editing]=it; else data.orders.push(it);
+  save(); closeModal(); render();
+}
+
+function saveApp(){
+  const name=($('fn')||{}).value?.trim();
+  if(!name){ toast('Name is required'); return; }
+  const it={id:editing!=null?data.apps[editing].id:String(Date.now()),
+             name,packageName:$('fpkg').value.trim(),
+             iconUrl:$('fimg')?.value.trim()||'',
+             order:parseInt($('ford').value)||1};
+  if(editing!=null) data.apps[editing]=it; else data.apps.push(it);
+  save(); closeModal(); render();
+}
+
+// ── Delete ─────────────────────────────────────────────────────────────────
+function del(id){
+  if(!confirm('Delete this item?')) return;
+  if(sec==='houseGuide') data.houseGuide=data.houseGuide.filter(v=>v.id!==id);
+  else if(sec==='services'||sec==='localGuide') data[sec][cat].splice(id,1);
+  else if(sec==='orders') data.orders.splice(id,1);
+  else if(sec==='apps') data.apps.splice(id,1);
+  save(); render();
+}
+
+// ── Export / Import ────────────────────────────────────────────────────────
+function exportJSON(){
+  const out={version:1,updatedAt:new Date().toISOString(),...data};
+  const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download='hubtv_content.json'; a.click();
+  toast('Exported hubtv_content.json ↓');
+}
+
+function importJSON(inp){
+  const f=inp.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=e=>{
+    try{
+      const d=JSON.parse(e.target.result);
+      delete d.version; delete d.updatedAt;
+      data={...JSON.parse(JSON.stringify(DEF)),...d};
+      save(false); render(); toast('Imported successfully ✓');
+    }catch{ toast('Invalid JSON file ✗'); }
+  };
+  r.readAsText(f); inp.value='';
+}
+
+// ── Publish to GitHub ───────────────────────────────────────────────────────
+const GH_REPO  = 'tecmastervh/hubtv-content';
+const GH_FILE  = 'content.json';
+const GH_RAW   = `https://raw.githubusercontent.com/${GH_REPO}/main/${GH_FILE}`;
+const GH_API   = `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`;
+
+function openPublish(){
+  $('pub-modal').style.display='flex';
+  $('pub-gh-token').value=localStorage.getItem('hubtv_gh_token')||'';
+  $('pub-result').style.display='none';
+  $('pub-err').style.display='none';
+  const savedUrl=localStorage.getItem('hubtv_gh_url')||'';
+  if(savedUrl) showPubUrl(savedUrl);
+}
+function closePublish(){ $('pub-modal').style.display='none'; }
+function showPubUrl(url){
+  $('pub-url-txt').textContent=url;
+  $('pub-result').style.display='';
+}
+function copyPubUrl(){
+  navigator.clipboard.writeText($('pub-url-txt').textContent).then(()=>toast('URL copiada ✓'));
+}
+async function publishToGitHub(){
+  const token=($('pub-gh-token').value||'').trim();
+  if(!token){ $('pub-err').textContent='Informe o GitHub Personal Access Token.'; $('pub-err').style.display=''; return; }
+  $('pub-err').style.display='none';
+  $('pub-result').style.display='none';
+  $('pub-btn').disabled=true; $('pub-ico').textContent='hourglass_empty'; $('pub-lbl').textContent='Publicando…';
+
+  const headers={ 'Authorization':'Bearer '+token, 'Accept':'application/vnd.github.v3+json', 'Content-Type':'application/json' };
+  const payload={ version:1, updatedAt:new Date().toISOString(), ...data };
+  const content=btoa(unescape(encodeURIComponent(JSON.stringify(payload,null,2))));
+
+  try{
+    // Obter SHA atual do arquivo (necessário para atualizar)
+    let sha;
+    const getRes=await fetch(GH_API,{headers});
+    if(getRes.ok){ const j=await getRes.json(); sha=j.sha; }
+    else if(getRes.status!==404){ throw new Error('Erro ao ler arquivo: HTTP '+getRes.status); }
+
+    const body={ message:'Update HubTV content — '+new Date().toLocaleString(), content };
+    if(sha) body.sha=sha;
+
+    const putRes=await fetch(GH_API,{method:'PUT',headers,body:JSON.stringify(body)});
+    if(!putRes.ok){
+      const j=await putRes.json().catch(()=>({}));
+      throw new Error(j.message||('HTTP '+putRes.status));
+    }
+
+    localStorage.setItem('hubtv_gh_token',token);
+    localStorage.setItem('hubtv_gh_url',GH_RAW);
+    showPubUrl(GH_RAW);
+    toast('Publicado no GitHub ✓');
+  } catch(e){
+    $('pub-err').textContent='Erro: '+e.message;
+    $('pub-err').style.display='';
+  }
+  $('pub-btn').disabled=false; $('pub-ico').textContent='cloud_upload'; $('pub-lbl').textContent='Publish Now';
+}
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function $(id){ return document.getElementById(id); }
+function x(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+let tt;
+function toast(m){ const el=$('toast'); el.textContent=m; el.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove('show'),2500); }
+
+$('modal').addEventListener('click',e=>{ if(e.target===$('modal')) closeModal(); });
+</script>
+</body>
+</html>
