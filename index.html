@@ -322,7 +322,7 @@ const DEF={
     {id:'4',name:'Pool Heating',category:'Extras',description:'Heated pool for duration of your stay',price:'$75.00',imageUrl:''},
   ],
   coupons:[],
-  ticker:[],
+  ticker:{messages:[],speed:60,fontSize:13},
   apps:[
     {id:'1',name:'Netflix',packageName:'com.netflix.mediaclient',iconUrl:'',order:1},
     {id:'2',name:'Disney+',packageName:'com.disney.disneyplus',iconUrl:'',order:2},
@@ -341,8 +341,17 @@ let sec='houseGuide', cat=null, editing=null, data={};
 function init(){
   const s=localStorage.getItem('hubtv_data');
   data=s?JSON.parse(s):JSON.parse(JSON.stringify(DEF));
-  data.coupons = data.coupons || [];
-  data.ticker  = data.ticker  || [];
+  data.coupons=data.coupons||[];
+  // Migrate ticker: old format was a plain array
+  if(Array.isArray(data.ticker)){
+    data.ticker={messages:data.ticker,speed:60,fontSize:13};
+  } else if(!data.ticker||typeof data.ticker!=='object'){
+    data.ticker={messages:[],speed:60,fontSize:13};
+  } else {
+    data.ticker.messages=data.ticker.messages||[];
+    data.ticker.speed=data.ticker.speed||60;
+    data.ticker.fontSize=data.ticker.fontSize||13;
+  }
   cat=CAT_SERVICES[0];
   render();
 }
@@ -562,28 +571,74 @@ function renderCoupons(){
 }
 
 function renderTicker(){
-  const msgs=data.ticker||[];
+  const t=data.ticker||{messages:[],speed:60,fontSize:13};
+  const msgs=t.messages||[];
+  const speed=t.speed||60;
+  const fsize=t.fontSize||13;
   return `
-  <div class="infobox">
-    <b>Informativo (Ticker)</b> — texto corrido exibido na parte inferior da tela Home do app.<br>
-    Adicione as mensagens abaixo e clique em <b>Publish to Cloud</b> para atualizar o app.
-    As mensagens serão exibidas em sequência, separadas por <b> • </b>.
+  <div class="infobox" style="margin-bottom:16px">
+    <b>Informativo (Ticker)</b> — faixa de texto corrido exibida na parte inferior da tela Home do app.<br>
+    Configure abaixo e clique em <b>Publish to Cloud</b> para atualizar o app.
   </div>
+
   <div class="card" style="margin-bottom:14px">
-    <div class="card-hd"><span>Nova mensagem</span></div>
-    <div style="padding:14px;display:flex;gap:8px;align-items:flex-start">
-      <div style="flex:1">
-        <input id="ticker-input" placeholder="Ex: Pool maintenance Tuesday 8am–12pm. Checkout at 10am."
-          style="width:100%;padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-family:inherit;font-size:13px;outline:none"
-          onkeydown="if(event.key==='Enter')addTicker()">
-        <div class="hint" style="margin-top:5px">Pressione Enter ou clique em Adicionar. Depois, Publish to Cloud para salvar no app.</div>
+    <div class="card-hd"><span class="material-icons-round mi" style="font-size:16px;vertical-align:middle;margin-right:6px">tune</span>Configurações da faixa</div>
+    <div style="padding:16px 18px;display:flex;flex-direction:column;gap:18px">
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <label style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px">Velocidade do texto</label>
+          <span style="font-size:12px;color:var(--acc);font-weight:600"><span id="speed-val">${speed}</span> px/s</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-size:11px;color:var(--muted);white-space:nowrap">🐢 Lento</span>
+          <input type="range" id="ticker-speed" min="20" max="200" step="10" value="${speed}"
+            style="flex:1;accent-color:var(--acc);cursor:pointer"
+            oninput="$('speed-val').textContent=this.value">
+          <span style="font-size:11px;color:var(--muted);white-space:nowrap">Rápido 🚀</span>
+        </div>
+        <div class="hint" style="margin-top:5px">Menor valor = mais lento. Recomendado: 40–80 px/s para leitura confortável na TV.</div>
       </div>
-      <button class="btn pri" onclick="addTicker()" style="white-space:nowrap;flex-shrink:0"><span class="material-icons-round mi">add</span>Adicionar</button>
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <label style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px">Tamanho da fonte</label>
+          <span style="font-size:12px;color:var(--acc);font-weight:600"><span id="fsize-val">${fsize}</span> sp</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-size:11px;color:var(--muted);white-space:nowrap">A</span>
+          <input type="range" id="ticker-fsize" min="9" max="22" step="1" value="${fsize}"
+            style="flex:1;accent-color:var(--acc);cursor:pointer"
+            oninput="$('fsize-val').textContent=this.value">
+          <span style="font-size:14px;color:var(--muted);font-weight:600;white-space:nowrap">A</span>
+        </div>
+        <div class="hint" style="margin-top:5px">Recomendado: 11–15 sp para boa visibilidade na TV.</div>
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;padding-top:4px;border-top:1px solid var(--border)">
+        <button class="btn pri" onclick="saveTickerConfig()">
+          <span class="material-icons-round mi">save</span>Salvar configurações
+        </button>
+      </div>
     </div>
   </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div class="card-hd"><span class="material-icons-round mi" style="font-size:16px;vertical-align:middle;margin-right:6px">add_circle_outline</span>Nova mensagem</div>
+    <div style="padding:14px 18px;display:flex;gap:8px">
+      <input id="ticker-input" placeholder="Ex: Piscina fechada terça 8h–12h. Check-out: 10h00."
+        style="flex:1;padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-family:inherit;font-size:13px;outline:none;transition:border-color .12s"
+        onfocus="this.style.borderColor='var(--acc)'" onblur="this.style.borderColor='var(--border)'"
+        onkeydown="if(event.key==='Enter')addTicker()">
+      <button class="btn pri" onclick="addTicker()" style="flex-shrink:0">
+        <span class="material-icons-round mi">add</span>Adicionar
+      </button>
+    </div>
+  </div>
+
   <div class="card">
     <div class="card-hd">
-      <span>Mensagens ativas (${msgs.length})</span>
+      <span><span class="material-icons-round mi" style="font-size:16px;vertical-align:middle;margin-right:6px">list</span>Mensagens (${msgs.length})</span>
       ${msgs.length?`<button class="btn del sm" onclick="clearAllTicker()"><span class="material-icons-round mi">delete_sweep</span>Limpar tudo</button>`:''}
     </div>
     <ul class="item-list">
@@ -592,7 +647,7 @@ function renderTicker(){
         <div class="ricon"><span class="material-icons-round mi">campaign</span></div>
         <div class="rbody">
           <div class="rname">${x(m)}</div>
-          <div class="rsub">Posição ${i+1} de ${msgs.length}</div>
+          <div class="rsub" style="margin-top:2px">Posição ${i+1} de ${msgs.length}</div>
         </div>
         <div class="racts">
           ${i>0?`<button class="btn out sm" title="Mover para cima" onclick="moveTicker(${i},-1)"><span class="material-icons-round mi">arrow_upward</span></button>`:''}
@@ -600,30 +655,40 @@ function renderTicker(){
           <button class="btn del sm" onclick="delTicker(${i})"><span class="material-icons-round mi">delete</span></button>
         </div>
       </li>`).join('')}
-      ${!msgs.length?'<li class="empty">Nenhuma mensagem ainda. Adicione acima e publique.</li>':''}
+      ${!msgs.length?'<li class="empty">Nenhuma mensagem ainda — adicione acima e publique no GitHub.</li>':''}
     </ul>
   </div>`;
+}
+
+function saveTickerConfig(){
+  const speed=parseInt($('ticker-speed').value)||60;
+  const fsize=parseInt($('ticker-fsize').value)||13;
+  data.ticker=data.ticker||{messages:[],speed:60,fontSize:13};
+  data.ticker.speed=speed;
+  data.ticker.fontSize=fsize;
+  save('Configurações salvas ✓');
 }
 
 function addTicker(){
   const inp=$('ticker-input');
   const txt=(inp.value||'').trim();
   if(!txt){toast('Digite uma mensagem');return;}
-  data.ticker=data.ticker||[];
-  data.ticker.push(txt);
+  data.ticker=data.ticker||{messages:[],speed:60,fontSize:13};
+  data.ticker.messages=data.ticker.messages||[];
+  data.ticker.messages.push(txt);
   inp.value='';
   save(); render();
-  setTimeout(()=>{ const el=$('ticker-input'); if(el) el.focus(); },50);
+  setTimeout(()=>{ const el=$('ticker-input'); if(el) el.focus(); },60);
 }
 
 function delTicker(i){
   if(!confirm('Remover esta mensagem?'))return;
-  data.ticker.splice(i,1);
+  data.ticker.messages.splice(i,1);
   save(); render();
 }
 
 function moveTicker(i,dir){
-  const arr=data.ticker;
+  const arr=data.ticker.messages;
   const j=i+dir;
   if(j<0||j>=arr.length)return;
   [arr[i],arr[j]]=[arr[j],arr[i]];
@@ -631,8 +696,8 @@ function moveTicker(i,dir){
 }
 
 function clearAllTicker(){
-  if(!confirm('Remover TODAS as mensagens do informativo?'))return;
-  data.ticker=[];
+  if(!confirm('Remover TODAS as mensagens?'))return;
+  data.ticker.messages=[];
   save(); render();
 }
 
