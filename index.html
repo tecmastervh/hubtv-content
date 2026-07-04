@@ -149,7 +149,7 @@ body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;height
       <!-- <li data-s="orders" onclick="go('orders')"><span class="material-icons-round mi">shopping_cart</span>My Orders</li> hidden — not yet defined -->
       <li data-s="apps"       onclick="go('apps')"><span class="material-icons-round mi">apps</span>Apps</li>
       <li data-s="coupons" onclick="go('coupons')"><span class="material-icons-round mi">local_offer</span>Coupons</li>
-      <li data-s="ticker"  onclick="go('ticker')"><span class="material-icons-round mi">campaign</span>Informativo</li>
+      <li data-s="ticker"  onclick="go('ticker')"><span class="material-icons-round mi">campaign</span>News Ticker</li>
     </ul>
     <div class="sb-foot">
       <button class="btn" style="background:rgba(63,185,80,.15);color:var(--ok);border:1px solid rgba(63,185,80,.3)" onclick="openPublish()"><span class="material-icons-round mi">cloud_upload</span>Publish to Cloud</button>
@@ -251,7 +251,7 @@ const SECS={
   orders:{label:'My Orders',icon:'shopping_cart'},
   apps:{label:'Apps',icon:'apps'},
   coupons:{label:'Coupons',icon:'local_offer'},
-  ticker:{label:'Informativo',icon:'campaign'},
+  ticker:{label:'News Ticker',icon:'campaign'},
 };
 const CAT_SERVICES=['Grocery','Transportation','Medical','Maintenance','Emergency','Fast Food'];
 const CAT_LOCAL=['Restaurants','Quick Bites','Shopping','Attractions','Pharmacy','Grocery'];
@@ -578,35 +578,35 @@ function renderTicker(){
   return `
   <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;flex-wrap:wrap">
     <div class="infobox" style="margin:0;flex:1;min-width:220px">
-      <b>Informativo (Ticker)</b> — faixa de texto corrido na parte inferior da tela Home.<br>
-      Ajuste a velocidade, fonte, adicione mensagens e clique em <b>Publicar</b>.
+      <b>News Ticker</b> — scrolling text displayed at the bottom of the Home screen on the TV app.<br>
+      Set the speed and font size, add your messages, then click <b>Publish to App</b>.
     </div>
     <button class="btn" style="background:rgba(63,185,80,.15);color:var(--ok);border:1px solid rgba(63,185,80,.3);flex-shrink:0;height:fit-content" onclick="openPublish()">
-      <span class="material-icons-round mi">cloud_upload</span>Publicar no App
+      <span class="material-icons-round mi">cloud_upload</span>Publish to App
     </button>
   </div>
 
   <div class="card" style="margin-bottom:14px">
-    <div class="card-hd">Configurações da faixa</div>
+    <div class="card-hd">Ticker Settings</div>
     <div style="padding:16px 18px">
 
       <div style="margin-bottom:16px">
         <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
-          <label style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px">Velocidade do texto</label>
-          <span style="font-size:12px;color:var(--acc);font-weight:700"><span id="speed-val">${speed}</span> px/s &nbsp;<span style="color:var(--muted);font-weight:400">(menor = mais lento)</span></span>
+          <label style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px">Scroll Speed</label>
+          <span style="font-size:12px;color:var(--acc);font-weight:700"><span id="speed-val">${speed}</span> px/s &nbsp;<span style="color:var(--muted);font-weight:400">(lower = slower)</span></span>
         </div>
         <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px">
-          <span style="font-size:11px;color:var(--muted)">Lento</span>
+          <span style="font-size:11px;color:var(--muted)">Slow</span>
           <input type="range" id="ticker-speed" min="20" max="200" step="10" value="${speed}"
             style="width:100%;accent-color:var(--acc);cursor:pointer"
             oninput="$('speed-val').textContent=this.value">
-          <span style="font-size:11px;color:var(--muted)">Rapido</span>
+          <span style="font-size:11px;color:var(--muted)">Fast</span>
         </div>
       </div>
 
       <div style="margin-bottom:18px">
         <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
-          <label style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px">Tamanho da fonte</label>
+          <label style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px">Font Size</label>
           <span style="font-size:12px;color:var(--acc);font-weight:700"><span id="fsize-val">${fsize}</span> sp</span>
         </div>
         <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px">
@@ -620,29 +620,29 @@ function renderTicker(){
 
       <div style="border-top:1px solid var(--border);padding-top:14px;display:flex;justify-content:flex-end">
         <button class="btn pri" onclick="saveTickerConfig()">
-          <span class="material-icons-round mi">save</span>Salvar configurações
+          <span class="material-icons-round mi">save</span>Save Settings
         </button>
       </div>
     </div>
   </div>
 
   <div class="card" style="margin-bottom:14px">
-    <div class="card-hd">Nova mensagem</div>
+    <div class="card-hd">Add Message</div>
     <div style="padding:12px 16px;display:flex;gap:8px">
-      <input id="ticker-input" placeholder="Ex: Piscina fechada terca 8h-12h. Check-out: 10h00."
+      <input id="ticker-input" placeholder="Ex: Pool closed Tuesday 8am–12pm. Check-out time: 10:00 AM."
         style="flex:1;min-width:0;padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-family:inherit;font-size:13px;outline:none;transition:border-color .12s"
         onfocus="this.style.borderColor='var(--acc)'" onblur="this.style.borderColor='var(--border)'"
         onkeydown="if(event.key==='Enter')addTicker()">
       <button class="btn pri" onclick="addTicker()" style="flex-shrink:0">
-        <span class="material-icons-round mi">add</span>Adicionar
+        <span class="material-icons-round mi">add</span>Add
       </button>
     </div>
   </div>
 
   <div class="card">
     <div class="card-hd">
-      <span>Mensagens (${msgs.length})</span>
-      ${msgs.length?`<button class="btn del sm" onclick="clearAllTicker()"><span class="material-icons-round mi">delete_sweep</span>Limpar tudo</button>`:''}
+      <span>Messages (${msgs.length})</span>
+      ${msgs.length?`<button class="btn del sm" onclick="clearAllTicker()"><span class="material-icons-round mi">delete_sweep</span>Clear all</button>`:''}
     </div>
     <ul class="item-list">
       ${msgs.map((m,i)=>`
@@ -650,17 +650,17 @@ function renderTicker(){
         <div class="ricon" style="flex-shrink:0;margin-top:2px"><span class="material-icons-round mi">campaign</span></div>
         <div class="rbody" style="flex:1;min-width:0">
           <div style="font-size:13px;font-weight:500;line-height:1.4;word-break:break-word;white-space:normal">${x(m)}</div>
-          <div class="rsub" style="margin-top:3px">Posicao ${i+1} de ${msgs.length}</div>
+          <div class="rsub" style="margin-top:3px">Position ${i+1} of ${msgs.length}</div>
         </div>
         <div class="racts" style="flex-shrink:0;flex-direction:column;gap:4px;align-items:flex-end">
           <div style="display:flex;gap:4px">
-            ${i>0?`<button class="btn out sm" onclick="moveTicker(${i},-1)" title="Subir"><span class="material-icons-round mi">arrow_upward</span></button>`:''}
-            ${i<msgs.length-1?`<button class="btn out sm" onclick="moveTicker(${i},1)" title="Descer"><span class="material-icons-round mi">arrow_downward</span></button>`:''}
+            ${i>0?`<button class="btn out sm" onclick="moveTicker(${i},-1)" title="Move up"><span class="material-icons-round mi">arrow_upward</span></button>`:''}
+            ${i<msgs.length-1?`<button class="btn out sm" onclick="moveTicker(${i},1)" title="Move down"><span class="material-icons-round mi">arrow_downward</span></button>`:''}
             <button class="btn del sm" onclick="delTicker(${i})"><span class="material-icons-round mi">delete</span></button>
           </div>
         </div>
       </li>`).join('')}
-      ${!msgs.length?'<li class="empty">Nenhuma mensagem ainda — adicione acima e clique em Publicar no App.</li>':''}
+      ${!msgs.length?'<li class="empty">No messages yet — add one above and click Publish to App.</li>':''}
     </ul>
   </div>`;
 }
@@ -671,13 +671,13 @@ function saveTickerConfig(){
   data.ticker=data.ticker||{messages:[],speed:60,fontSize:13};
   data.ticker.speed=speed;
   data.ticker.fontSize=fsize;
-  save('Configurações salvas ✓');
+  save('Settings saved ✓');
 }
 
 function addTicker(){
   const inp=$('ticker-input');
   const txt=(inp.value||'').trim();
-  if(!txt){toast('Digite uma mensagem');return;}
+  if(!txt){toast('Please enter a message.');return;}
   data.ticker=data.ticker||{messages:[],speed:60,fontSize:13};
   data.ticker.messages=data.ticker.messages||[];
   data.ticker.messages.push(txt);
@@ -687,7 +687,7 @@ function addTicker(){
 }
 
 function delTicker(i){
-  if(!confirm('Remover esta mensagem?'))return;
+  if(!confirm('Remove this message?'))return;
   data.ticker.messages.splice(i,1);
   save(); render();
 }
@@ -701,7 +701,7 @@ function moveTicker(i,dir){
 }
 
 function clearAllTicker(){
-  if(!confirm('Remover TODAS as mensagens?'))return;
+  if(!confirm('Remove ALL messages? This cannot be undone.'))return;
   data.ticker.messages=[];
   save(); render();
 }
