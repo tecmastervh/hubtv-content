@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T19:46:04.374Z",
+  "updatedAt": "2026-07-07T17:14:49.002Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -458,10 +458,33 @@
       "unitAddress": "993 Paradise Drive, Windsor Island Resort, FL",
       "period": "Jul 4, 2026 – Jul 10, 2026",
       "timestamp": "2026-07-04T13:24:44.332622"
+    },
+    {
+      "id": "1783195115631",
+      "code": "MVH-20260704-2NT0",
+      "placeName": "Budget Car Rental",
+      "category": "Car Rental",
+      "unitId": 366102,
+      "guestName": "Sylvia Jenkins",
+      "unitAddress": "2444 Dubai Street, Windsor at Westside, FL",
+      "period": "Jul 4, 2026 – Jul 5, 2026",
+      "timestamp": "2026-07-04T15:58:35.631395"
+    },
+    {
+      "id": "1783195819806",
+      "code": "MVH-20260704-BA6Z",
+      "placeName": "McDonald's",
+      "category": "Quick Bites",
+      "unitId": 366102,
+      "guestName": "Sylvia Jenkins",
+      "unitAddress": "2444 Dubai Street, Windsor at Westside, FL",
+      "period": "Jul 4, 2026 – Jul 5, 2026",
+      "timestamp": "2026-07-04T16:10:19.806622"
     }
   ],
   "ticker": {
     "messages": [
+      "Discover Master Vacation Homes and enjoy an unforgettable experience in Orlando | 🍽️ Enjoy exclusive benefits: 10% off at ESKINA Restaurant | 🍖 10% off at ADEGA GAÚCHA | We wish you and your family a wonderful stay!",
       "Conheça a Master Vacation Homes e viva uma experiência inesquecível em Orlando | 🍽️ Aproveite benefícios exclusivos: ESKINA Restaurant com 10% de desconto | 🍖 ADEGA GAÚCHA com 10% de desconto | 🇺🇸 Happy 4th of July! Celebrando o Independence Day. Desejamos um excelente estadia para você e sua família!"
     ],
     "speed": 40,
