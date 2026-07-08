@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Coupon — Master Vacation Homes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;
+  --surf:#161b22;
+  --surf2:#1c2129;
+  --border:#30363d;
+  --acc:#ffc107;
+  --acc2:#ffca28;
+  --txt:#e6edf3;
+  --muted:#8b949e;
+  --ok:#3fb950;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:'Inter',sans-serif;
+  min-height:100vh;
+  padding:24px 16px 40px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* ── Header ── */
+.header{
+  text-align:center;
+  margin-bottom:24px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--border);
+  width:100%;
+  max-width:480px;
+}
+.header .logo-icon{
+  font-size:44px;
+  color:var(--acc);
+  display:block;
+  margin-bottom:10px;
+}
+.header h1{font-size:20px;font-weight:700;letter-spacing:.3px}
+.header p{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* ── Coupon card ── */
+.coupon-card{
+  width:100%;
+  max-width:480px;
+  background:var(--surf);
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.5);
+}
+
+/* top band — place + category */
+.coupon-top{
+  background:linear-gradient(135deg,rgba(255,193,7,.12),rgba(255,193,7,.04));
+  padding:22px 20px 20px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.cat-icon-wrap{
+  width:54px;
+  height:54px;
+  border-radius:14px;
+  background:rgba(255,193,7,.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.cat-icon-wrap .material-icons-round{font-size:28px;color:var(--acc)}
+.place-info{flex:1;min-width:0}
+.place-name{font-size:19px;font-weight:700;line-height:1.2;margin-bottom:7px}
+.category-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  background:rgba(255,193,7,.12);
+  color:var(--acc);
+  padding:3px 10px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+.category-badge .material-icons-round{font-size:12px}
+
+/* coupon code block with dashed cut line */
+.coupon-code-block{
+  text-align:center;
+  padding:22px 20px 20px;
+  position:relative;
+  border-bottom:2px dashed var(--border);
+}
+.code-label{
+  font-size:10px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:8px;
+  font-weight:600;
+}
+.code-value{
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:5px;
+  color:var(--acc);
+  font-family:'Courier New',monospace;
+  word-break:break-all;
+}
+.scissors-line{
+  position:absolute;
+  left:50%;
+  bottom:-12px;
+  transform:translateX(-50%);
+  background:var(--bg);
+  padding:0 10px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1;
+}
+
+/* details section */
+.coupon-details{
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.detail-row{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.detail-row .material-icons-round{
+  font-size:18px;
+  color:var(--muted);
+  margin-top:1px;
+  flex-shrink:0;
+}
+.detail-body{flex:1;min-width:0}
+.detail-label{
+  font-size:10px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  font-weight:600;
+  margin-bottom:2px;
+}
+.detail-value{
+  font-size:13px;
+  color:var(--txt);
+  font-weight:500;
+  line-height:1.4;
+}
+
+/* footer / valid note */
+.coupon-footer{
+  padding:14px 20px;
+  border-top:1px solid var(--border);
+  background:rgba(255,255,255,.02);
+}
+.valid-badge{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  color:var(--ok);
+  font-weight:600;
+  margin-bottom:5px;
+}
+.valid-badge .material-icons-round{font-size:16px}
+.terms{font-size:10px;color:var(--muted);line-height:1.5}
+
+/* page footer */
+.page-footer{
+  margin-top:24px;
+  text-align:center;
+  font-size:11px;
+  color:var(--muted);
+  width:100%;
+  max-width:480px;
+}
+.page-footer a{color:var(--acc);text-decoration:none}
+
+/* invalid state */
+#invalid-state{
+  display:none;
+  width:100%;
+  max-width:480px;
+  text-align:center;
+  padding:48px 20px;
+}
+#invalid-state .material-icons-round{
+  font-size:52px;
+  color:var(--muted);
+  display:block;
+  margin-bottom:14px;
+}
+#invalid-state p{color:var(--muted);font-size:14px;line-height:1.5}
+
+/* responsive tweaks for very small screens */
+@media(max-width:360px){
+  .code-value{font-size:22px;letter-spacing:3px}
+  .place-name{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <span class="material-icons-round logo-icon">villa</span>
+  <h1>Master Vacation Homes</h1>
+  <p>Exclusive guest partner coupon</p>
+</div>
+
+<!-- Coupon card (shown when URL params are valid) -->
+<div id="coupon-card" class="coupon-card">
+
+  <!-- Place + category -->
+  <div class="coupon-top">
+    <div class="cat-icon-wrap">
+      <span class="material-icons-round" id="cat-icon">local_offer</span>
+    </div>
+    <div class="place-info">
+      <div class="place-name" id="place-name">—</div>
+      <span class="category-badge">
+        <span class="material-icons-round">label</span>
+        <span id="category">—</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- Coupon code -->
+  <div class="coupon-code-block">
+    <div class="code-label">Coupon Code</div>
+    <div class="code-value" id="coupon-code">—</div>
+    <div class="scissors-line">✂</div>
+  </div>
+
+  <!-- Details -->
+  <div class="coupon-details">
+
+    <div class="detail-row">
+      <span class="material-icons-round">person</span>
+      <div class="detail-body">
+        <div class="detail-label">Guest</div>
+        <div class="detail-value" id="guest-name">—</div>
+      </div>
+    </div>
+
+    <div class="detail-row">
+      <span class="material-icons-round">home</span>
+      <div class="detail-body">
+        <div class="detail-label">Property</div>
+        <div class="detail-value" id="unit-address">—</div>
+      </div>
+    </div>
+
+    <div class="detail-row">
+      <span class="material-icons-round">date_range</span>
+      <div class="detail-body">
+        <div class="detail-label">Stay Period</div>
+        <div class="detail-value" id="period">—</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer note -->
+  <div class="coupon-footer">
+    <div class="valid-badge">
+      <span class="material-icons-round">verified</span>
+      Valid for one visit during this stay
+    </div>
+    <div class="terms">
+      Show this screen to the cashier or server at the time of purchase.
+      One coupon per stay. Cannot be combined with other offers.
+    </div>
+  </div>
+
+</div>
+
+<!-- Invalid state -->
+<div id="invalid-state">
+  <span class="material-icons-round">error_outline</span>
+  <p>This coupon link is invalid or incomplete.<br>Please re-scan the QR code from the HubTV app.</p>
+</div>
+
+<!-- Page footer -->
+<div class="page-footer">
+  Generated by <strong>HubTV Guest</strong> ·
+  <a href="https://mastervacationhomes.com" target="_blank" rel="noopener">mastervacationhomes.com</a>
+</div>
+
+<script>
+const CAT_ICONS = {
+  'Restaurants'   : 'restaurant',
+  'Fast Food'     : 'fastfood',
+  'Grocery'       : 'shopping_cart',
+  'Entertainment' : 'local_activity',
+  'Shopping'      : 'shopping_bag',
+  'Transportation': 'directions_car',
+  'Medical'       : 'local_hospital',
+  'Maintenance'   : 'build',
+  'Emergency'     : 'emergency',
+  'Spa'           : 'spa',
+  'Sports'        : 'sports_tennis',
+  'Theme Parks'   : 'attractions',
+  'default'       : 'local_offer'
+};
+
+function qp(key) {
+  return decodeURIComponent(new URLSearchParams(location.search).get(key) || '');
+}
+
+const code   = qp('code');
+const place  = qp('place');
+const cat    = qp('cat');
+const guest  = qp('guest');
+const unit   = qp('unit');
+const period = qp('period');
+
+if (!code || !place) {
+  document.getElementById('coupon-card').style.display  = 'none';
+  document.getElementById('invalid-state').style.display = 'block';
+} else {
+  document.title = code + ' — Master Vacation Homes Coupon';
+  document.getElementById('coupon-code').textContent  = code;
+  document.getElementById('place-name').textContent   = place;
+  document.getElementById('category').textContent     = cat    || '—';
+  document.getElementById('guest-name').textContent   = guest  || '—';
+  document.getElementById('unit-address').textContent = unit   || '—';
+  document.getElementById('period').textContent       = period || '—';
+  document.getElementById('cat-icon').textContent     = CAT_ICONS[cat] || CAT_ICONS['default'];
+}
+</script>
+</body>
+</html>
