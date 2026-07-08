@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-07T17:19:45.200Z",
+  "updatedAt": "2026-07-08T22:27:44.710Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -235,14 +235,6 @@
   },
   "localGuide": {
     "Restaurants": [
-      {
-        "name": "Longhorn Steakhouse",
-        "address": "7804 W Irlo Bronson Hwy, Kissimmee",
-        "phone": "(407) 390-1234",
-        "rating": "4.3",
-        "imageUrl": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80",
-        "website": ""
-      },
       {
         "name": "Eskina Brazilian",
         "address": "5749 W Irlo Bronson Memorial Hwy",
