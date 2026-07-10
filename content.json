@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-08T22:27:44.710Z",
+  "updatedAt": "2026-07-10T15:06:15.365Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -472,6 +472,28 @@
       "unitAddress": "2444 Dubai Street, Windsor at Westside, FL",
       "period": "Jul 4, 2026 – Jul 5, 2026",
       "timestamp": "2026-07-04T16:10:19.806622"
+    },
+    {
+      "id": "1783549411373",
+      "code": "MVH-20260708-6570",
+      "placeName": "Columbia Restaurant",
+      "category": "Restaurants",
+      "unitId": 366102,
+      "guestName": "Ger Lofvall",
+      "unitAddress": "2444 Dubai Street, Windsor at Westside, FL",
+      "period": "Jul 5, 2026 – Jul 17, 2026",
+      "timestamp": "2026-07-08T18:23:31.373932"
+    },
+    {
+      "id": "1783549706781",
+      "code": "MVH-20260708-T3LX",
+      "placeName": "Eskina Brazilian",
+      "category": "Restaurants",
+      "unitId": 366102,
+      "guestName": "Ger Lofvall",
+      "unitAddress": "2444 Dubai Street, Windsor at Westside, FL",
+      "period": "Jul 5, 2026 – Jul 17, 2026",
+      "timestamp": "2026-07-08T18:28:26.781175"
     }
   ],
   "ticker": {
@@ -482,5 +504,6 @@
     ],
     "speed": 40,
     "fontSize": 16
-  }
+  },
+  "adminPassword": "master2026"
 }
