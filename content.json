@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-07-17T19:38:39.159Z",
+  "version": 8,
+  "updatedAt": "2026-07-17T19:47:35.375Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -511,5 +511,9 @@
     "fontFamily": "",
     "fontSize": 33,
     "color": ""
+  },
+  "background": {
+    "type": "video",
+    "url": ""
   }
 }
