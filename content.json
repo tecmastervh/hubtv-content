@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-15T20:28:35.217Z",
+  "updatedAt": "2026-07-17T14:23:52.591Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -505,5 +505,6 @@
     "speed": 40,
     "fontSize": 16
   },
-  "adminPassword": "0226"
+  "adminPassword": "0226",
+  "logoUrl": ""
 }
