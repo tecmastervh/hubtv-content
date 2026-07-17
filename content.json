@@ -1,6 +1,6 @@
 {
-  "version": 12,
-  "updatedAt": "2026-07-17T19:52:35.983Z",
+  "version": 13,
+  "updatedAt": "2026-07-17T19:56:56.813Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -509,8 +509,8 @@
   "logoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/logo-1784309980256.png",
   "homeText": {
     "fontFamily": "",
-    "fontSize": 0,
-    "color": "#ffffff"
+    "fontSize": 22,
+    "color": ""
   },
   "background": {
     "type": "video",
