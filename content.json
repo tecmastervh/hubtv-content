@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-17T14:23:52.591Z",
+  "updatedAt": "2026-07-17T14:24:17.191Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -506,5 +506,5 @@
     "fontSize": 16
   },
   "adminPassword": "0226",
-  "logoUrl": ""
+  "logoUrl": "C:\\Users\\MasterVH\\Downloads\\Logo Master"
 }
