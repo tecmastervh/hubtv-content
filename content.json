@@ -1,6 +1,6 @@
 {
-  "version": 16,
-  "updatedAt": "2026-07-17T20:00:02.868Z",
+  "version": 17,
+  "updatedAt": "2026-07-17T20:38:37.471Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -515,5 +515,7 @@
   "background": {
     "type": "video",
     "url": ""
-  }
+  },
+  "logoSize": 72,
+  "logoOffsetY": 0
 }
