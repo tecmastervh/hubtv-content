@@ -513,8 +513,8 @@
     "color": ""
   },
   "background": {
-    "type": "image",
-    "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784382663744.jpg"
+    "type": "video",
+    "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784322342837.mp4"
   },
   "logoSize": 72,
   "logoOffsetY": 0
