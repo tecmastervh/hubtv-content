@@ -1,6 +1,6 @@
 {
-  "version": 35,
-  "updatedAt": "2026-07-18T13:56:48.386Z",
+  "version": 36,
+  "updatedAt": "2026-07-18T14:14:48.948Z",
   "houseGuide": [
     {
       "id": "wifi",
@@ -513,8 +513,8 @@
     "color": ""
   },
   "background": {
-    "type": "video",
-    "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784322342837.mp4"
+    "type": "image",
+    "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784384086523.jpg"
   },
   "logoSize": 72,
   "logoOffsetY": 0
