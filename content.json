@@ -1,5 +1,5 @@
 {
-  "version": 46,
+  "version": 47,
   "updatedAt": "2026-07-19T15:07:45.717Z",
   "houseGuide": [
     {
@@ -393,107 +393,6 @@
       "packageName": "com.spotify.music",
       "iconUrl": "",
       "order": 8
-    }
-  ],
-  "coupons": [
-    {
-      "id": "1783182038324",
-      "code": "MVH-20260704-JRDP",
-      "placeName": "Enterprise Rent-A-Car",
-      "category": "Car Rental",
-      "unitId": 395586,
-      "guestName": "Theresa Hardy",
-      "unitAddress": "993 Paradise Drive, Windsor Island Resort, FL",
-      "period": "Jul 4, 2026 – Jul 10, 2026",
-      "timestamp": "2026-07-04T12:20:38.324787"
-    },
-    {
-      "id": "1783185119954",
-      "code": "MVH-20260704-35KT",
-      "placeName": "Hertz Car Rental",
-      "category": "Car Rental",
-      "unitId": 395586,
-      "guestName": "Theresa Hardy",
-      "unitAddress": "993 Paradise Drive, Windsor Island Resort, FL",
-      "period": "Jul 4, 2026 – Jul 10, 2026",
-      "timestamp": "2026-07-04T13:11:59.954460"
-    },
-    {
-      "id": "1783185271379",
-      "code": "MVH-20260704-6RQA",
-      "placeName": "Eskina Brazillian",
-      "category": "Restaurants",
-      "unitId": 395586,
-      "guestName": "Theresa Hardy",
-      "unitAddress": "993 Paradise Drive, Windsor Island Resort, FL",
-      "period": "Jul 4, 2026 – Jul 10, 2026",
-      "timestamp": "2026-07-04T13:14:31.379853"
-    },
-    {
-      "id": "1783185608055",
-      "code": "MVH-20260704-1YFK",
-      "placeName": "Longhorn Steakhouse",
-      "category": "Restaurants",
-      "unitId": 395586,
-      "guestName": "Theresa Hardy",
-      "unitAddress": "993 Paradise Drive, Windsor Island Resort, FL",
-      "period": "Jul 4, 2026 – Jul 10, 2026",
-      "timestamp": "2026-07-04T13:20:08.055679"
-    },
-    {
-      "id": "1783185884332",
-      "code": "MVH-20260704-QM2U",
-      "placeName": "Eskina Brazilian",
-      "category": "Restaurants",
-      "unitId": 395586,
-      "guestName": "Theresa Hardy",
-      "unitAddress": "993 Paradise Drive, Windsor Island Resort, FL",
-      "period": "Jul 4, 2026 – Jul 10, 2026",
-      "timestamp": "2026-07-04T13:24:44.332622"
-    },
-    {
-      "id": "1783195115631",
-      "code": "MVH-20260704-2NT0",
-      "placeName": "Budget Car Rental",
-      "category": "Car Rental",
-      "unitId": 366102,
-      "guestName": "Sylvia Jenkins",
-      "unitAddress": "2444 Dubai Street, Windsor at Westside, FL",
-      "period": "Jul 4, 2026 – Jul 5, 2026",
-      "timestamp": "2026-07-04T15:58:35.631395"
-    },
-    {
-      "id": "1783195819806",
-      "code": "MVH-20260704-BA6Z",
-      "placeName": "McDonald's",
-      "category": "Quick Bites",
-      "unitId": 366102,
-      "guestName": "Sylvia Jenkins",
-      "unitAddress": "2444 Dubai Street, Windsor at Westside, FL",
-      "period": "Jul 4, 2026 – Jul 5, 2026",
-      "timestamp": "2026-07-04T16:10:19.806622"
-    },
-    {
-      "id": "1783549411373",
-      "code": "MVH-20260708-6570",
-      "placeName": "Columbia Restaurant",
-      "category": "Restaurants",
-      "unitId": 366102,
-      "guestName": "Ger Lofvall",
-      "unitAddress": "2444 Dubai Street, Windsor at Westside, FL",
-      "period": "Jul 5, 2026 – Jul 17, 2026",
-      "timestamp": "2026-07-08T18:23:31.373932"
-    },
-    {
-      "id": "1783549706781",
-      "code": "MVH-20260708-T3LX",
-      "placeName": "Eskina Brazilian",
-      "category": "Restaurants",
-      "unitId": 366102,
-      "guestName": "Ger Lofvall",
-      "unitAddress": "2444 Dubai Street, Windsor at Westside, FL",
-      "period": "Jul 5, 2026 – Jul 17, 2026",
-      "timestamp": "2026-07-08T18:28:26.781175"
     }
   ],
   "ticker": {
