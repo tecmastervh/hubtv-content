@@ -1,5 +1,5 @@
 {
-  "version": 57,
+  "version": 58,
   "updatedAt": "2026-07-19T15:07:45.717Z",
   "houseGuide": [
     {
@@ -424,6 +424,5 @@
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784384086523.jpg"
   },
   "logoSize": 72,
-  "logoOffsetY": 0,
-  "coupons": []
+  "logoOffsetY": 0
 }
