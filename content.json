@@ -1,5 +1,5 @@
 {
-  "version": 49,
+  "version": 50,
   "updatedAt": "2026-07-19T15:07:45.717Z",
   "houseGuide": [
     {
@@ -250,6 +250,14 @@
         "rating": "",
         "imageUrl": "",
         "website": "https://www.eskinaorlando.com/"
+      },
+      {
+        "name": "Adega Gaucha Steakhouse",
+        "address": "7804 West Irlo Bronson Memorial Highway",
+        "phone": "",
+        "rating": "",
+        "imageUrl": "https://s3-eu-west-1.amazonaws.com/tpd/logos/61e19b79734f96a7bb7ed828/0x0.png",
+        "website": ""
       }
     ],
     "Quick Bites": [
@@ -395,6 +403,7 @@
       "order": 8
     }
   ],
+  "coupons": [],
   "ticker": {
     "messages": [
       "Discover Master Vacation Homes and enjoy an unforgettable experience in Orlando | 🍽️ Enjoy exclusive benefits: 10% off at ESKINA Restaurant | 🍖 10% off at ADEGA GAÚCHA | We wish you and your family a wonderful stay!",
