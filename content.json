@@ -424,5 +424,6 @@
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
   "logoSize": 72,
-  "logoOffsetY": 0
+  "logoOffsetY": 0,
+  "coupons": []
 }
