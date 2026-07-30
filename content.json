@@ -1,12 +1,9 @@
 {
-  "version": 64,
-  "updatedAt": "2026-07-19T15:07:45.717Z",
   "houseGuide": [
     {
       "id": "wifi",
-      "title": "Wi-Fi",
       "icon": "wifi",
-      "imageUrl": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80",
+      "title": "Wi-Fi",
       "details": [
         {
           "icon": "router",
@@ -26,13 +23,13 @@
           "value": "Contact our support team",
           "highlight": false
         }
-      ]
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80"
     },
     {
       "id": "pool",
-      "title": "Pool",
       "icon": "pool",
-      "imageUrl": "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=900&q=80",
+      "title": "Pool",
       "details": [
         {
           "icon": "schedule",
@@ -58,13 +55,13 @@
           "value": "Shallow water — diving strictly prohibited",
           "highlight": false
         }
-      ]
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=900&q=80"
     },
     {
       "id": "parking",
-      "title": "Parking",
       "icon": "local_parking",
-      "imageUrl": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=900&q=80",
+      "title": "Parking",
       "details": [
         {
           "icon": "directions_car",
@@ -84,13 +81,13 @@
           "value": "Unauthorized vehicles may be towed",
           "highlight": false
         }
-      ]
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=900&q=80"
     },
     {
       "id": "trash",
-      "title": "Trash Collection",
       "icon": "delete_outline",
-      "imageUrl": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80",
+      "title": "Trash Collection",
       "details": [
         {
           "icon": "calendar_today",
@@ -110,13 +107,13 @@
           "value": "Blue bin: plastics, paper and cans",
           "highlight": false
         }
-      ]
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80"
     },
     {
       "id": "checkout",
-      "title": "Check-out",
       "icon": "exit_to_app",
-      "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80",
+      "title": "Check-out",
       "details": [
         {
           "icon": "schedule",
@@ -136,13 +133,13 @@
           "value": "Set to 78°F before departure",
           "highlight": false
         }
-      ]
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80"
     },
     {
       "id": "rules",
-      "title": "House Rules",
       "icon": "rule",
-      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80",
+      "title": "House Rules",
       "details": [
         {
           "icon": "smoke_free",
@@ -168,146 +165,147 @@
           "value": "10:00 PM – 8:00 AM",
           "highlight": false
         }
-      ]
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
     }
   ],
   "services": {
     "Grocery": [
       {
         "name": "Walmart Supercenter",
-        "address": "3250 Vineland Rd, Kissimmee, FL",
-        "phone": "(407) 397-1799",
         "hours": "6AM–11PM",
+        "phone": "(407) 397-1799",
         "rating": "4.1",
-        "imageUrl": ""
-      }
-    ],
-    "Transportation": [
-      {
-        "name": "Lyft / Uber",
-        "address": "App-based",
-        "phone": "",
-        "hours": "24/7",
-        "rating": "4.5",
+        "address": "3250 Vineland Rd, Kissimmee, FL",
         "imageUrl": ""
       }
     ],
     "Medical": [
       {
         "name": "CVS MinuteClinic",
-        "address": "3001 W Vine St, Kissimmee",
-        "phone": "(407) 846-5570",
         "hours": "8AM–8PM",
+        "phone": "(407) 846-5570",
         "rating": "4.0",
-        "imageUrl": ""
-      }
-    ],
-    "Maintenance": [
-      {
-        "name": "Property Management",
-        "address": "",
-        "phone": "+1 (888) 123-4567",
-        "hours": "9AM–5PM",
-        "rating": "",
+        "address": "3001 W Vine St, Kissimmee",
         "imageUrl": ""
       }
     ],
     "Emergency": [
       {
         "name": "Emergency Services",
-        "address": "",
-        "phone": "911",
         "hours": "24/7",
+        "phone": "911",
         "rating": "",
+        "address": "",
         "imageUrl": ""
       }
     ],
     "Fast Food": [
       {
         "name": "McDonald's",
-        "address": "8001 W Irlo Bronson Hwy",
-        "phone": "(407) 396-8070",
         "hours": "6AM–12AM",
+        "phone": "(407) 396-8070",
         "rating": "3.8",
+        "address": "8001 W Irlo Bronson Hwy",
+        "imageUrl": ""
+      }
+    ],
+    "Maintenance": [
+      {
+        "name": "Property Management",
+        "hours": "9AM–5PM",
+        "phone": "+1 (888) 123-4567",
+        "rating": "",
+        "address": "",
+        "imageUrl": ""
+      }
+    ],
+    "Transportation": [
+      {
+        "name": "Lyft / Uber",
+        "hours": "24/7",
+        "phone": "",
+        "rating": "4.5",
+        "address": "App-based",
         "imageUrl": ""
       }
     ]
   },
   "localGuide": {
-    "Restaurants": [
+    "Grocery": [
       {
-        "name": "Eskina Brazilian",
-        "address": "5749 W Irlo Bronson Memorial Hwy",
-        "phone": "689-325-7833",
-        "rating": "4.9",
-        "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/43/12/ad/front.jpg?w=900&h=500&s=1",
-        "website": "https://www.eskinaorlando.com/"
-      },
-      {
-        "name": "Eskina Brazillian",
-        "address": "5627 International Drive",
-        "phone": "(689) 325-7833",
-        "rating": "",
-        "imageUrl": "",
-        "website": "https://www.eskinaorlando.com/"
-      },
-      {
-        "name": "Adega Gaucha Steakhouse",
-        "address": "7804 West Irlo Bronson Memorial Highway",
-        "phone": "",
-        "rating": "",
-        "imageUrl": "https://s3-eu-west-1.amazonaws.com/tpd/logos/61e19b79734f96a7bb7ed828/0x0.png",
-        "website": ""
-      }
-    ],
-    "Quick Bites": [
-      {
-        "name": "McDonald's",
-        "address": "8001 W Irlo Bronson Hwy",
-        "phone": "",
-        "rating": "3.8",
-        "imageUrl": "",
-        "website": ""
-      }
-    ],
-    "Shopping": [
-      {
-        "name": "Orlando Vineland Premium Outlets",
-        "address": "8200 Vineland Ave, Orlando",
-        "phone": "(407) 238-7787",
+        "name": "Publix",
+        "phone": "(407) 396-6594",
         "rating": "4.4",
-        "imageUrl": "",
-        "website": "premiumoutlets.com/outlet/orlando-vineland"
-      }
-    ],
-    "Attractions": [
-      {
-        "name": "Walt Disney World",
-        "address": "Orlando, FL",
-        "phone": "(407) 939-5277",
-        "rating": "4.7",
-        "imageUrl": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1200/675/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/cinderella-castle/MK17-HappilyEverAfter0507-263-16x9.jpg?2023-03-03T13:57:16+00:00",
-        "website": "disneyworld.disney.go.com"
+        "address": "7805 W Irlo Bronson Hwy",
+        "website": "",
+        "imageUrl": ""
       }
     ],
     "Pharmacy": [
       {
         "name": "Walgreens",
-        "address": "7848 W Irlo Bronson Hwy",
         "phone": "(407) 397-1023",
         "rating": "3.9",
-        "imageUrl": "",
-        "website": ""
+        "address": "7848 W Irlo Bronson Hwy",
+        "website": "",
+        "imageUrl": ""
       }
     ],
-    "Grocery": [
+    "Shopping": [
       {
-        "name": "Publix",
-        "address": "7805 W Irlo Bronson Hwy",
-        "phone": "(407) 396-6594",
+        "name": "Orlando Vineland Premium Outlets",
+        "phone": "(407) 238-7787",
         "rating": "4.4",
-        "imageUrl": "",
-        "website": ""
+        "address": "8200 Vineland Ave, Orlando",
+        "website": "premiumoutlets.com/outlet/orlando-vineland",
+        "imageUrl": ""
+      }
+    ],
+    "Attractions": [
+      {
+        "name": "Walt Disney World",
+        "phone": "(407) 939-5277",
+        "rating": "4.7",
+        "address": "Orlando, FL",
+        "website": "disneyworld.disney.go.com",
+        "imageUrl": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1200/675/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/cinderella-castle/MK17-HappilyEverAfter0507-263-16x9.jpg?2023-03-03T13:57:16+00:00"
+      }
+    ],
+    "Quick Bites": [
+      {
+        "name": "McDonald's",
+        "phone": "",
+        "rating": "3.8",
+        "address": "8001 W Irlo Bronson Hwy",
+        "website": "",
+        "imageUrl": ""
+      }
+    ],
+    "Restaurants": [
+      {
+        "name": "Eskina Brazilian",
+        "phone": "689-325-7833",
+        "rating": "4.9",
+        "address": "5749 W Irlo Bronson Memorial Hwy",
+        "website": "https://www.eskinaorlando.com/",
+        "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/43/12/ad/front.jpg?w=900&h=500&s=1"
+      },
+      {
+        "name": "Eskina Brazillian",
+        "phone": "(689) 325-7833",
+        "rating": "",
+        "address": "5627 International Drive",
+        "website": "https://www.eskinaorlando.com/",
+        "imageUrl": ""
+      },
+      {
+        "name": "Adega Gaucha Steakhouse",
+        "phone": "",
+        "rating": "",
+        "address": "7804 West Irlo Bronson Memorial Highway",
+        "website": "",
+        "imageUrl": "https://s3-eu-west-1.amazonaws.com/tpd/logos/61e19b79734f96a7bb7ed828/0x0.png"
       }
     ]
   },
@@ -315,92 +313,92 @@
     {
       "id": "1",
       "name": "Welcome Package",
-      "category": "Extras",
-      "description": "Champagne, chocolates & flowers",
       "price": "$49.99",
-      "imageUrl": ""
+      "category": "Extras",
+      "imageUrl": "",
+      "description": "Champagne, chocolates & flowers"
     },
     {
       "id": "2",
       "name": "Early Check-in (10AM)",
-      "category": "Stay",
-      "description": "Check in from 10:00 AM instead of 4:00 PM",
       "price": "$50.00",
-      "imageUrl": ""
+      "category": "Stay",
+      "imageUrl": "",
+      "description": "Check in from 10:00 AM instead of 4:00 PM"
     },
     {
       "id": "3",
       "name": "Late Check-out (2PM)",
-      "category": "Stay",
-      "description": "Check out until 2:00 PM instead of 11:00 AM",
       "price": "$50.00",
-      "imageUrl": ""
+      "category": "Stay",
+      "imageUrl": "",
+      "description": "Check out until 2:00 PM instead of 11:00 AM"
     },
     {
       "id": "4",
       "name": "Pool Heating",
-      "category": "Extras",
-      "description": "Heated pool for duration of your stay",
       "price": "$75.00",
-      "imageUrl": ""
+      "category": "Extras",
+      "imageUrl": "",
+      "description": "Heated pool for duration of your stay"
     }
   ],
   "apps": [
     {
       "id": "1",
       "name": "Netflix",
-      "packageName": "com.netflix.mediaclient",
+      "order": 1,
       "iconUrl": "",
-      "order": 1
+      "packageName": "com.netflix.mediaclient"
     },
     {
       "id": "2",
       "name": "Disney+",
-      "packageName": "com.disney.disneyplus",
+      "order": 2,
       "iconUrl": "",
-      "order": 2
+      "packageName": "com.disney.disneyplus"
     },
     {
       "id": "3",
       "name": "YouTube",
-      "packageName": "com.google.android.youtube.tv",
+      "order": 3,
       "iconUrl": "",
-      "order": 3
+      "packageName": "com.google.android.youtube.tv"
     },
     {
       "id": "4",
       "name": "Amazon Prime Video",
-      "packageName": "com.amazon.amazonvideo.livingroom",
+      "order": 4,
       "iconUrl": "",
-      "order": 4
+      "packageName": "com.amazon.amazonvideo.livingroom"
     },
     {
       "id": "5",
       "name": "HBO Max",
-      "packageName": "com.hbo.hbonow",
+      "order": 5,
       "iconUrl": "",
-      "order": 5
+      "packageName": "com.hbo.hbonow"
     },
     {
       "id": "6",
       "name": "Hulu",
-      "packageName": "com.hulu.plus",
+      "order": 6,
       "iconUrl": "",
-      "order": 6
+      "packageName": "com.hulu.plus"
     },
     {
       "id": "7",
       "name": "Peacock",
-      "packageName": "com.peacocktv.peacockandroid",
+      "order": 7,
       "iconUrl": "",
-      "order": 7
+      "packageName": "com.peacocktv.peacockandroid"
     },
     {
       "id": "8",
       "name": "Spotify",
-      "packageName": "com.spotify.music",
+      "order": 8,
       "iconUrl": "",
-      "order": 8
+      "packageName": "com.spotify.music"
     }
   ],
   "ticker": {
@@ -412,8 +410,9 @@
     "speed": 40,
     "fontSize": 16
   },
-  "adminPassword": "0226",
   "logoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/logo-1784309980256.png",
+  "logoSize": 72,
+  "logoOffsetY": 0,
   "homeText": {
     "fontFamily": "",
     "fontSize": 25,
@@ -423,7 +422,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "logoSize": 72,
-  "logoOffsetY": 0,
-  "coupons": []
+  "version": 65,
+  "adminPassword": "0226",
+  "updatedAt": "2026-07-30T13:43:45.826Z"
 }
