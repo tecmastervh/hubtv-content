@@ -422,6 +422,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 68,
-  "updatedAt": "2026-07-30T19:23:27.875Z"
+  "version": 69,
+  "adminPassword": "0226",
+  "updatedAt": "2026-07-31T19:32:14.445Z"
 }
