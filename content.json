@@ -292,20 +292,12 @@
         "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/43/12/ad/front.jpg?w=900&h=500&s=1"
       },
       {
-        "name": "Eskina Brazillian",
-        "phone": "(689) 325-7833",
-        "rating": "",
-        "address": "5627 International Drive",
-        "website": "https://www.eskinaorlando.com/",
-        "imageUrl": "https://lh3.googleusercontent.com/grass-cs/ACvplmOUPqCIw9TIjItlOYvfvTCPzE9_f0YRjZnnsBNOC5_4DbT45rDYbD_Xx3OVjjh6h7rwHZijsZauDXLm_bvIiGnti9LNKRSkQo-fv1vRlzavXviC546bS_0CSvolBlX2uJXQZC5N=w289-h312-n-k-no"
-      },
-      {
         "name": "Adega Gaucha Steakhouse",
         "phone": "",
         "rating": "4.8",
         "address": "7804 West Irlo Bronson Memorial Highway",
         "website": "",
-        "imageUrl": "https://s3-eu-west-1.amazonaws.com/tpd/logos/61e19b79734f96a7bb7ed828/0x0.png"
+        "imageUrl": "https://lh3.googleusercontent.com/grass-cs/ACvplmOUPqCIw9TIjItlOYvfvTCPzE9_f0YRjZnnsBNOC5_4DbT45rDYbD_Xx3OVjjh6h7rwHZijsZauDXLm_bvIiGnti9LNKRSkQo-fv1vRlzavXviC546bS_0CSvolBlX2uJXQZC5N=w289-h312-n-k-no"
       }
     ]
   },
@@ -422,7 +414,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 71,
+  "version": 72,
   "adminPassword": "0226",
-  "updatedAt": "2026-08-04T13:21:14.275Z"
+  "updatedAt": "2026-08-04T13:23:07.273Z"
 }
