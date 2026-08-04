@@ -297,7 +297,7 @@
         "rating": "",
         "address": "5627 International Drive",
         "website": "https://www.eskinaorlando.com/",
-        "imageUrl": ""
+        "imageUrl": "https://lh3.googleusercontent.com/grass-cs/ACvplmOUPqCIw9TIjItlOYvfvTCPzE9_f0YRjZnnsBNOC5_4DbT45rDYbD_Xx3OVjjh6h7rwHZijsZauDXLm_bvIiGnti9LNKRSkQo-fv1vRlzavXviC546bS_0CSvolBlX2uJXQZC5N=w289-h312-n-k-no"
       },
       {
         "name": "Adega Gaucha Steakhouse",
@@ -422,7 +422,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 69,
+  "version": 70,
   "adminPassword": "0226",
-  "updatedAt": "2026-07-31T19:32:14.445Z"
+  "updatedAt": "2026-08-04T13:19:23.354Z"
 }
