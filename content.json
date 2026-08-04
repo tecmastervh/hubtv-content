@@ -302,7 +302,7 @@
       {
         "name": "Adega Gaucha Steakhouse",
         "phone": "",
-        "rating": "",
+        "rating": "4.8",
         "address": "7804 West Irlo Bronson Memorial Highway",
         "website": "",
         "imageUrl": "https://s3-eu-west-1.amazonaws.com/tpd/logos/61e19b79734f96a7bb7ed828/0x0.png"
@@ -422,7 +422,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 70,
+  "version": 71,
   "adminPassword": "0226",
-  "updatedAt": "2026-08-04T13:19:23.354Z"
+  "updatedAt": "2026-08-04T13:21:14.275Z"
 }
