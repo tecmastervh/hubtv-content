@@ -167,6 +167,13 @@
         }
       ],
       "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "item_1785957976870",
+      "icon": "info",
+      "title": "Resort",
+      "details": [],
+      "imageUrl": ""
     }
   ],
   "services": {
@@ -414,7 +421,25 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 72,
+  "version": 73,
+  "resortInfo": {
+    "Lucaya Village": [
+      {
+        "id": "item_1786018241985",
+        "icon": "pool",
+        "title": "Pool Hours Times",
+        "details": [
+          {
+            "icon": "info",
+            "label": "Piscina ",
+            "value": "08:00h",
+            "highlight": false
+          }
+        ],
+        "imageUrl": ""
+      }
+    ]
+  },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-04T13:23:07.273Z"
+  "updatedAt": "2026-08-06T12:10:44.245Z"
 }
