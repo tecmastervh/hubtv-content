@@ -29,14 +29,8 @@
     {
       "id": "pool",
       "icon": "pool",
-      "title": "Pool",
+      "title": "Pool Rules",
       "details": [
-        {
-          "icon": "schedule",
-          "label": "Hours",
-          "value": "8:00 AM – 10:00 PM",
-          "highlight": true
-        },
         {
           "icon": "no_drinks",
           "label": "No Glass",
@@ -53,6 +47,12 @@
           "icon": "waves",
           "label": "No Diving",
           "value": "Shallow water — diving strictly prohibited",
+          "highlight": false
+        },
+        {
+          "icon": "volume_off",
+          "label": "Noise",
+          "value": "Carefull noises after 10pm",
           "highlight": false
         }
       ],
@@ -167,13 +167,6 @@
         }
       ],
       "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
-    },
-    {
-      "id": "item_1785957976870",
-      "icon": "info",
-      "title": "Resort",
-      "details": [],
-      "imageUrl": ""
     }
   ],
   "services": {
@@ -421,7 +414,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 73,
+  "version": 74,
   "resortInfo": {
     "Lucaya Village": [
       {
@@ -441,5 +434,5 @@
     ]
   },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-06T12:10:44.245Z"
+  "updatedAt": "2026-08-06T18:39:12.891Z"
 }
