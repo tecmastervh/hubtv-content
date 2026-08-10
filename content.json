@@ -405,7 +405,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 82,
+  "version": 83,
   "resortInfo": {
     "Lucaya Village": [
       {
@@ -471,5 +471,5 @@
     ]
   },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-10T13:31:14.784Z"
+  "updatedAt": "2026-08-10T14:15:57.263Z"
 }
