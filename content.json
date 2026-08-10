@@ -1,6 +1,20 @@
 {
   "houseGuide": [
     {
+      "id": "item_1786365569056",
+      "icon": "kitchen",
+      "title": "Rent a BBQ Grill",
+      "details": [
+        {
+          "icon": "info",
+          "label": "Contact our team to unlock your experience",
+          "value": "",
+          "highlight": true
+        }
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365539914.webp"
+    },
+    {
       "id": "wifi",
       "icon": "wifi",
       "title": "Wi-Fi",
@@ -24,7 +38,39 @@
           "highlight": false
         }
       ],
-      "imageUrl": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80"
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786367382552.webp"
+    },
+    {
+      "id": "rules",
+      "icon": "rule",
+      "title": "House Rules",
+      "details": [
+        {
+          "icon": "smoke_free",
+          "label": "No Smoking",
+          "value": "Strictly no smoking inside the property",
+          "highlight": false
+        },
+        {
+          "icon": "celebration",
+          "label": "No Parties",
+          "value": "No events or gatherings beyond registered guests",
+          "highlight": false
+        },
+        {
+          "icon": "pets",
+          "label": "No Pets",
+          "value": "Unless pre-approved — contact us in advance",
+          "highlight": false
+        },
+        {
+          "icon": "volume_off",
+          "label": "Quiet Hours",
+          "value": "10:00 PM – 8:00 AM",
+          "highlight": false
+        }
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786367337138.webp"
     },
     {
       "id": "pool",
@@ -135,52 +181,6 @@
         }
       ],
       "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80"
-    },
-    {
-      "id": "rules",
-      "icon": "rule",
-      "title": "House Rules",
-      "details": [
-        {
-          "icon": "smoke_free",
-          "label": "No Smoking",
-          "value": "Strictly no smoking inside the property",
-          "highlight": false
-        },
-        {
-          "icon": "celebration",
-          "label": "No Parties",
-          "value": "No events or gatherings beyond registered guests",
-          "highlight": false
-        },
-        {
-          "icon": "pets",
-          "label": "No Pets",
-          "value": "Unless pre-approved — contact us in advance",
-          "highlight": false
-        },
-        {
-          "icon": "volume_off",
-          "label": "Quiet Hours",
-          "value": "10:00 PM – 8:00 AM",
-          "highlight": false
-        }
-      ],
-      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
-    },
-    {
-      "id": "item_1786365569056",
-      "icon": "kitchen",
-      "title": "Rent a BBQ Grill",
-      "details": [
-        {
-          "icon": "info",
-          "label": "Contact our team to unlock your experience",
-          "value": "",
-          "highlight": true
-        }
-      ],
-      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365539914.webp"
     }
   ],
   "services": {
@@ -410,15 +410,21 @@
   "ticker": {
     "messages": [
       {
+        "ref": "",
         "text": "ADEGA GAÚCHA: Enjoy 🍖 10% off at the CUPOM",
+        "section": "localGuide",
         "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365143787.png"
       },
       {
+        "ref": "",
         "text": "Do you want use the BBQ ? Call us now",
+        "section": "houseGuide",
         "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365407728.webp"
       },
       {
+        "ref": "",
         "text": "Want add Pool Heat At your stay ? Contact us!",
+        "section": "houseGuide",
         "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365438263.jpg"
       }
     ],
@@ -437,7 +443,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 77,
+  "version": 78,
   "resortInfo": {
     "Lucaya Village": [
       {
@@ -453,9 +459,41 @@
           }
         ],
         "imageUrl": ""
+      },
+      {
+        "id": "item_1786367474960",
+        "icon": "info",
+        "title": "Trash Collection",
+        "details": [
+          {
+            "icon": "calendar_today",
+            "label": "Pickup Days",
+            "value": "Monday (Organic) Recycle(Tuesday)",
+            "highlight": false
+          },
+          {
+            "icon": "access_time",
+            "label": "Time",
+            "value": "Place bins at curb by: 7:00AM",
+            "highlight": false
+          },
+          {
+            "icon": "recycling",
+            "label": "Recycling",
+            "value": "Blue Bin: Plastic, Paper and Cans",
+            "highlight": false
+          },
+          {
+            "icon": "recycling",
+            "label": "Organic",
+            "value": "Brown Bin",
+            "highlight": false
+          }
+        ],
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786367471580.webp"
       }
     ]
   },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-10T12:39:31.754Z"
+  "updatedAt": "2026-08-10T13:14:33.979Z"
 }
