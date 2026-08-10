@@ -70,12 +70,12 @@
           "highlight": false
         }
       ],
-      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786367337138.webp"
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368259861.jpg"
     },
     {
       "id": "pool",
       "icon": "pool",
-      "title": "Pool Rules",
+      "title": "House Pool Rules",
       "details": [
         {
           "icon": "no_drinks",
@@ -102,64 +102,12 @@
           "highlight": false
         }
       ],
-      "imageUrl": "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=900&q=80"
-    },
-    {
-      "id": "parking",
-      "icon": "local_parking",
-      "title": "Parking",
-      "details": [
-        {
-          "icon": "directions_car",
-          "label": "Assigned Spots",
-          "value": "Use only designated spots for this unit",
-          "highlight": false
-        },
-        {
-          "icon": "block",
-          "label": "Restrictions",
-          "value": "No parking on grass or blocking neighbors",
-          "highlight": false
-        },
-        {
-          "icon": "warning_amber",
-          "label": "Enforcement",
-          "value": "Unauthorized vehicles may be towed",
-          "highlight": false
-        }
-      ],
-      "imageUrl": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=900&q=80"
-    },
-    {
-      "id": "trash",
-      "icon": "delete_outline",
-      "title": "Trash Collection",
-      "details": [
-        {
-          "icon": "calendar_today",
-          "label": "Pickup Days",
-          "value": "Monday and Thursday",
-          "highlight": true
-        },
-        {
-          "icon": "access_time",
-          "label": "Time",
-          "value": "Place bins at curb by 7:00 AM",
-          "highlight": false
-        },
-        {
-          "icon": "recycling",
-          "label": "Recycling",
-          "value": "Blue bin: plastics, paper and cans",
-          "highlight": false
-        }
-      ],
-      "imageUrl": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80"
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368318157.webp"
     },
     {
       "id": "checkout",
       "icon": "exit_to_app",
-      "title": "Check-out",
+      "title": "Check-out Instructions",
       "details": [
         {
           "icon": "schedule",
@@ -443,7 +391,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 78,
+  "version": 79,
   "resortInfo": {
     "Lucaya Village": [
       {
@@ -491,9 +439,23 @@
           }
         ],
         "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786367471580.webp"
+      },
+      {
+        "id": "item_1786368400073",
+        "icon": "local_parking",
+        "title": "Parking Rules",
+        "details": [
+          {
+            "icon": "directions_car",
+            "label": "Parking Info:",
+            "value": "",
+            "highlight": false
+          }
+        ],
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368383850.jpg"
       }
     ]
   },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-10T13:14:33.979Z"
+  "updatedAt": "2026-08-10T13:28:27.241Z"
 }
