@@ -395,9 +395,14 @@
   ],
   "ticker": {
     "messages": [
-      "Discover Master Vacation Homes and enjoy an unforgettable experience in Orlando | 🍽️ Enjoy exclusive benefits: 10% off at ESKINA Restaurant | 🍖 10% off at ADEGA GAÚCHA | We wish you and your family a wonderful stay!",
-      "Descubre Master Vacation Homes y vive una experiencia inolvidable en Orlando | 🍽️ Disfruta de ventajas exclusivas: 10 % de descuento en el restaurante ESKINA | 🍖 10 % de descuento en ADEGA GAÚCHA | 🇺🇸 ¡Feliz 4 de julio! Celebramos el Día de la Independencia. ¡Os deseamos una estancia estupenda a ti y a tu familia!",
-      "Conheça a Master Vacation Homes e viva uma experiência inesquecível em Orlando | 🍽️ Aproveite benefícios exclusivos: ESKINA Restaurant com 10% de desconto | 🍖 ADEGA GAÚCHA com 10% de desconto |  Desejamos um excelente estadia para você e sua família!"
+      {
+        "text": "ADEGA GAÚCHA: Enjoy 🍖 10% off at the CUPOM",
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365143787.png"
+      },
+      {
+        "text": "Want add Pool Heat At your stay ? Contact us!",
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365198179.png"
+      }
     ],
     "speed": 40,
     "fontSize": 16
@@ -414,7 +419,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 74,
+  "version": 75,
   "resortInfo": {
     "Lucaya Village": [
       {
@@ -434,5 +439,5 @@
     ]
   },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-06T18:39:12.891Z"
+  "updatedAt": "2026-08-10T12:33:26.525Z"
 }
