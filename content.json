@@ -274,7 +274,8 @@
         "rating": "4.8",
         "address": "7804 West Irlo Bronson Memorial Highway",
         "website": "",
-        "imageUrl": "https://lh3.googleusercontent.com/grass-cs/ACvplmOUPqCIw9TIjItlOYvfvTCPzE9_f0YRjZnnsBNOC5_4DbT45rDYbD_Xx3OVjjh6h7rwHZijsZauDXLm_bvIiGnti9LNKRSkQo-fv1vRlzavXviC546bS_0CSvolBlX2uJXQZC5N=w289-h312-n-k-no"
+        "imageUrl": "https://lh3.googleusercontent.com/grass-cs/ACvplmOUPqCIw9TIjItlOYvfvTCPzE9_f0YRjZnnsBNOC5_4DbT45rDYbD_Xx3OVjjh6h7rwHZijsZauDXLm_bvIiGnti9LNKRSkQo-fv1vRlzavXviC546bS_0CSvolBlX2uJXQZC5N=w289-h312-n-k-no",
+        "hasCoupon": true
       }
     ]
   },
@@ -406,7 +407,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 84,
+  "version": 85,
   "resortInfo": {
     "Lucaya Village": [
       {
@@ -472,5 +473,5 @@
     ]
   },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-10T14:21:09.760Z"
+  "updatedAt": "2026-08-10T14:21:22.456Z"
 }
