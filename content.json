@@ -405,7 +405,7 @@
       }
     ],
     "speed": 40,
-    "fontSize": 16
+    "fontSize": 20
   },
   "logoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/logo-1784309980256.png",
   "logoSize": 72,
@@ -419,7 +419,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 75,
+  "version": 76,
   "resortInfo": {
     "Lucaya Village": [
       {
@@ -439,5 +439,5 @@
     ]
   },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-10T12:33:26.525Z"
+  "updatedAt": "2026-08-10T12:33:43.600Z"
 }
