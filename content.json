@@ -405,7 +405,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 81,
+  "version": 82,
   "resortInfo": {
     "Lucaya Village": [
       {
@@ -420,7 +420,7 @@
             "highlight": false
           }
         ],
-        "imageUrl": ""
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368669611.webp"
       },
       {
         "id": "item_1786367474960",
@@ -471,5 +471,5 @@
     ]
   },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-10T13:30:13.319Z"
+  "updatedAt": "2026-08-10T13:31:14.784Z"
 }
