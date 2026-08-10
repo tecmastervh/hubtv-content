@@ -265,7 +265,8 @@
         "rating": "4.9",
         "address": "5749 W Irlo Bronson Memorial Hwy",
         "website": "https://www.eskinaorlando.com/",
-        "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/43/12/ad/front.jpg?w=900&h=500&s=1"
+        "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/43/12/ad/front.jpg?w=900&h=500&s=1",
+        "hasCoupon": true
       },
       {
         "name": "Adega Gaucha Steakhouse",
@@ -405,7 +406,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 83,
+  "version": 84,
   "resortInfo": {
     "Lucaya Village": [
       {
@@ -471,5 +472,5 @@
     ]
   },
   "adminPassword": "0226",
-  "updatedAt": "2026-08-10T14:15:57.263Z"
+  "updatedAt": "2026-08-10T14:21:09.760Z"
 }
