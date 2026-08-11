@@ -142,9 +142,73 @@
           "highlight": false
         }
       ],
-      "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80"
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786382118153.jpg"
     }
   ],
+  "resortInfo": {
+    "Lucaya Village": [
+      {
+        "id": "item_1786018241985",
+        "icon": "pool",
+        "title": "Pool Hours Times",
+        "details": [
+          {
+            "icon": "info",
+            "label": "Piscina ",
+            "value": "08:00h",
+            "highlight": false
+          }
+        ],
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368669611.webp"
+      },
+      {
+        "id": "item_1786367474960",
+        "icon": "info",
+        "title": "Trash Collection",
+        "details": [
+          {
+            "icon": "calendar_today",
+            "label": "Pickup Days",
+            "value": "Monday (Organic) Recycle(Tuesday)",
+            "highlight": false
+          },
+          {
+            "icon": "access_time",
+            "label": "Time",
+            "value": "Place bins at curb by: 7:00AM",
+            "highlight": false
+          },
+          {
+            "icon": "recycling",
+            "label": "Recycling",
+            "value": "Blue Bin: Plastic, Paper and Cans",
+            "highlight": false
+          },
+          {
+            "icon": "recycling",
+            "label": "Organic",
+            "value": "Brown Bin",
+            "highlight": false
+          }
+        ],
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786367471580.webp"
+      },
+      {
+        "id": "item_1786368400073",
+        "icon": "local_parking",
+        "title": "Parking Rules",
+        "details": [
+          {
+            "icon": "directions_car",
+            "label": "Parking Info:",
+            "value": "",
+            "highlight": false
+          }
+        ],
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368383850.jpg"
+      }
+    ]
+  },
   "services": {
     "Grocery": [
       {
@@ -275,6 +339,7 @@
         "address": "7804 West Irlo Bronson Memorial Highway",
         "website": "",
         "imageUrl": "https://lh3.googleusercontent.com/grass-cs/ACvplmOUPqCIw9TIjItlOYvfvTCPzE9_f0YRjZnnsBNOC5_4DbT45rDYbD_Xx3OVjjh6h7rwHZijsZauDXLm_bvIiGnti9LNKRSkQo-fv1vRlzavXviC546bS_0CSvolBlX2uJXQZC5N=w289-h312-n-k-no",
+        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786385425980.webm",
         "hasCoupon": true
       }
     ]
@@ -407,71 +472,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 85,
-  "resortInfo": {
-    "Lucaya Village": [
-      {
-        "id": "item_1786018241985",
-        "icon": "pool",
-        "title": "Pool Hours Times",
-        "details": [
-          {
-            "icon": "info",
-            "label": "Piscina ",
-            "value": "08:00h",
-            "highlight": false
-          }
-        ],
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368669611.webp"
-      },
-      {
-        "id": "item_1786367474960",
-        "icon": "info",
-        "title": "Trash Collection",
-        "details": [
-          {
-            "icon": "calendar_today",
-            "label": "Pickup Days",
-            "value": "Monday (Organic) Recycle(Tuesday)",
-            "highlight": false
-          },
-          {
-            "icon": "access_time",
-            "label": "Time",
-            "value": "Place bins at curb by: 7:00AM",
-            "highlight": false
-          },
-          {
-            "icon": "recycling",
-            "label": "Recycling",
-            "value": "Blue Bin: Plastic, Paper and Cans",
-            "highlight": false
-          },
-          {
-            "icon": "recycling",
-            "label": "Organic",
-            "value": "Brown Bin",
-            "highlight": false
-          }
-        ],
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786367471580.webp"
-      },
-      {
-        "id": "item_1786368400073",
-        "icon": "local_parking",
-        "title": "Parking Rules",
-        "details": [
-          {
-            "icon": "directions_car",
-            "label": "Parking Info:",
-            "value": "",
-            "highlight": false
-          }
-        ],
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368383850.jpg"
-      }
-    ]
-  },
+  "version": 86,
   "adminPassword": "0226",
-  "updatedAt": "2026-08-10T14:21:22.456Z"
+  "updatedAt": "2026-08-11T16:16:16.931Z"
 }
