@@ -169,7 +169,17 @@
       "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
     }
   ],
-  "resortInfo": {},
+  "resortInfo": {
+    "Lucaya Village": [
+      {
+        "id": "item_1786994731282",
+        "icon": "wifi",
+        "title": "Teste",
+        "details": [],
+        "imageUrl": ""
+      }
+    ]
+  },
   "localGuide": {
     "Grocery": [
       {
@@ -366,7 +376,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 68,
+  "version": 69,
   "services": {
     "Grocery": [
       {
@@ -429,5 +439,5 @@
       }
     ]
   },
-  "updatedAt": "2026-08-17T19:17:33.505Z"
+  "updatedAt": "2026-08-17T19:25:33.610Z"
 }
