@@ -397,9 +397,9 @@
       {
         "ref": "",
         "text": "🍽️ Enjoy exclusive benefits:🍖 10% off at ADEGA GAÚCHA",
-        "section": "",
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786996654123.png",
-        "videoUrl": "",
+        "section": "localGuide",
+        "imageUrl": "",
+        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787076369389.webm",
         "durationSeconds": 30
       },
       {
@@ -434,7 +434,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 73,
+  "version": 74,
   "services": {
     "Grocery": [
       {
@@ -497,5 +497,5 @@
       }
     ]
   },
-  "updatedAt": "2026-08-18T18:04:15.853Z"
+  "updatedAt": "2026-08-18T18:06:27.408Z"
 }
