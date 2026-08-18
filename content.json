@@ -402,7 +402,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 75,
+  "version": 76,
   "services": {
     "Grocery": [
       {
@@ -465,5 +465,5 @@
       }
     ]
   },
-  "updatedAt": "2026-08-18T18:29:34.649Z"
+  "updatedAt": "2026-08-18T18:45:59.052Z"
 }
