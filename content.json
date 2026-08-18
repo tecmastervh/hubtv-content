@@ -1,34 +1,6 @@
 {
   "houseGuide": [
     {
-      "id": "item_1786365569056",
-      "icon": "kitchen",
-      "title": "Rent a BBQ Grill",
-      "details": [
-        {
-          "icon": "info",
-          "label": "Contact our team to unlock your experience",
-          "value": "",
-          "highlight": true
-        }
-      ],
-      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365539914.webp"
-    },
-    {
-      "id": "item_1786368592511",
-      "icon": "info",
-      "title": "Pool Heat",
-      "details": [
-        {
-          "icon": "router",
-          "label": "Want heat the pool?",
-          "value": "Contact us",
-          "highlight": false
-        }
-      ],
-      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368527905.jpg"
-    },
-    {
       "id": "wifi",
       "icon": "wifi",
       "title": "Wi-Fi",
@@ -52,7 +24,117 @@
           "highlight": false
         }
       ],
-      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786367382552.webp"
+      "imageUrl": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "pool",
+      "icon": "pool",
+      "title": "Pool",
+      "details": [
+        {
+          "icon": "schedule",
+          "label": "Hours",
+          "value": "8:00 AM – 10:00 PM",
+          "highlight": true
+        },
+        {
+          "icon": "no_drinks",
+          "label": "No Glass",
+          "value": "No glass containers in pool area",
+          "highlight": false
+        },
+        {
+          "icon": "child_care",
+          "label": "Supervision",
+          "value": "Children must be supervised at all times",
+          "highlight": false
+        },
+        {
+          "icon": "waves",
+          "label": "No Diving",
+          "value": "Shallow water — diving strictly prohibited",
+          "highlight": false
+        }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "parking",
+      "icon": "local_parking",
+      "title": "Parking",
+      "details": [
+        {
+          "icon": "directions_car",
+          "label": "Assigned Spots",
+          "value": "Use only designated spots for this unit",
+          "highlight": false
+        },
+        {
+          "icon": "block",
+          "label": "Restrictions",
+          "value": "No parking on grass or blocking neighbors",
+          "highlight": false
+        },
+        {
+          "icon": "warning_amber",
+          "label": "Enforcement",
+          "value": "Unauthorized vehicles may be towed",
+          "highlight": false
+        }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "trash",
+      "icon": "delete_outline",
+      "title": "Trash Collection",
+      "details": [
+        {
+          "icon": "calendar_today",
+          "label": "Pickup Days",
+          "value": "Monday and Thursday",
+          "highlight": true
+        },
+        {
+          "icon": "access_time",
+          "label": "Time",
+          "value": "Place bins at curb by 7:00 AM",
+          "highlight": false
+        },
+        {
+          "icon": "recycling",
+          "label": "Recycling",
+          "value": "Blue bin: plastics, paper and cans",
+          "highlight": false
+        }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "checkout",
+      "icon": "exit_to_app",
+      "title": "Check-out",
+      "details": [
+        {
+          "icon": "schedule",
+          "label": "Check-out Time",
+          "value": "Before 11:00 AM",
+          "highlight": true
+        },
+        {
+          "icon": "vpn_key",
+          "label": "Keys",
+          "value": "Return keys to the lock box before leaving",
+          "highlight": false
+        },
+        {
+          "icon": "thermostat",
+          "label": "Thermostat",
+          "value": "Set to 78°F before departure",
+          "highlight": false
+        }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80"
     },
     {
       "id": "rules",
@@ -84,202 +166,58 @@
           "highlight": false
         }
       ],
-      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368259861.jpg"
+      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
     },
     {
-      "id": "pool",
-      "icon": "pool",
-      "title": "House Pool Rules",
+      "id": "item_1787073829782",
+      "icon": "rule",
+      "title": "Late Check-out",
       "details": [
         {
-          "icon": "no_drinks",
-          "label": "No Glass",
-          "value": "No glass containers in pool area",
-          "highlight": false
-        },
-        {
-          "icon": "child_care",
-          "label": "Supervision",
-          "value": "Children must be supervised at all times",
-          "highlight": false
-        },
-        {
-          "icon": "waves",
-          "label": "No Diving",
-          "value": "Shallow water — diving strictly prohibited",
-          "highlight": false
-        },
-        {
-          "icon": "volume_off",
-          "label": "Noise",
-          "value": "Carefull noises after 10pm",
+          "icon": "block",
+          "label": "",
+          "value": "We do not offer a Late Check-Out service. Guests must book one extra night (if available).",
           "highlight": false
         }
       ],
-      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368318157.webp"
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787073795348.jpg"
     },
     {
-      "id": "checkout",
-      "icon": "exit_to_app",
-      "title": "Check-out Instructions",
+      "id": "item_1787075850155",
+      "icon": "bed",
+      "title": "High Chair & Pack And Play",
       "details": [
         {
-          "icon": "schedule",
-          "label": "Check-out Time",
-          "value": "Before 11:00 AM",
-          "highlight": true
-        },
-        {
-          "icon": "vpn_key",
-          "label": "Keys",
-          "value": "Return keys to the lock box before leaving",
-          "highlight": false
-        },
-        {
-          "icon": "thermostat",
-          "label": "Thermostat",
-          "value": "Set to 78°F before departure",
+          "icon": "router",
+          "label": "",
+          "value": " We do provide one high chair and one pack-n-play at no additional cost upon request. They will already be in the house in one of the closets. If you would like additional ones, we can provide more at $10 each for the entire stay.  If you would like to add more than one to your reservation, please let us know!",
           "highlight": false
         }
       ],
-      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786382118153.jpg"
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787075765497.jpg"
+    },
+    {
+      "id": "item_1787075965018",
+      "icon": "info",
+      "title": "Mid Stay Clean",
+      "details": [
+        {
+          "icon": "router",
+          "label": "",
+          "value": "We do offer a mid-stay cleaning service! The service includes a full cleaning, including bed linens and towels being washed. This service must be confirmed and paid at least 24 hours in advance.   If you would like to add it, please also let us know the day, time and whether you intend to be at the house on the day of the cleaning.",
+          "highlight": false
+        }
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787075946092.jpg"
     }
   ],
   "resortInfo": {
     "Lucaya Village": [
       {
-        "id": "item_1786018241985",
-        "icon": "pool",
-        "title": "Pool Hours Times",
-        "details": [
-          {
-            "icon": "info",
-            "label": "Piscina ",
-            "value": "08:00h",
-            "highlight": false
-          }
-        ],
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368669611.webp"
-      },
-      {
-        "id": "item_1786367474960",
-        "icon": "info",
-        "title": "Trash Collection",
-        "details": [
-          {
-            "icon": "calendar_today",
-            "label": "Pickup Days",
-            "value": "Monday (Organic) Recycle(Tuesday)",
-            "highlight": false
-          },
-          {
-            "icon": "access_time",
-            "label": "Time",
-            "value": "Place bins at curb by: 7:00AM",
-            "highlight": false
-          },
-          {
-            "icon": "recycling",
-            "label": "Recycling",
-            "value": "Blue Bin: Plastic, Paper and Cans",
-            "highlight": false
-          },
-          {
-            "icon": "recycling",
-            "label": "Organic",
-            "value": "Brown Bin",
-            "highlight": false
-          }
-        ],
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786367471580.webp"
-      },
-      {
-        "id": "item_1786368400073",
-        "icon": "local_parking",
-        "title": "Parking Rules",
-        "details": [
-          {
-            "icon": "directions_car",
-            "label": "Parking Info:",
-            "value": "",
-            "highlight": false
-          }
-        ],
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786368383850.jpg"
-      }
-    ]
-  },
-  "services": {
-    "Grocery": [
-      {
-        "name": "Walmart Supercenter",
-        "hours": "6AM–11PM",
-        "phone": "(407) 397-1799",
-        "rating": "4.1",
-        "address": "3250 Vineland Rd, Kissimmee, FL",
-        "imageUrl": ""
-      }
-    ],
-    "Medical": [
-      {
-        "name": "CVS MinuteClinic",
-        "hours": "8AM–8PM",
-        "phone": "(407) 846-5570",
-        "rating": "4.0",
-        "address": "3001 W Vine St, Kissimmee",
-        "imageUrl": ""
-      }
-    ],
-    "Emergency": [
-      {
-        "name": "Emergency Services",
-        "hours": "24/7",
-        "phone": "911",
-        "rating": "",
-        "address": "",
-        "imageUrl": ""
-      }
-    ],
-    "Fast Food": [
-      {
-        "name": "McDonald's",
-        "hours": "6AM–12AM",
-        "phone": "(407) 396-8070",
-        "rating": "3.8",
-        "address": "8001 W Irlo Bronson Hwy",
-        "imageUrl": ""
-      }
-    ],
-    "Maintenance": [
-      {
-        "name": "Property Management",
-        "hours": "9AM–5PM",
-        "phone": "+1 (888) 123-4567",
-        "rating": "",
-        "address": "",
-        "imageUrl": ""
-      }
-    ],
-    "Lucaya Village": {
-      "Car Rental": [
-        {
-          "name": "Teste",
-          "hours": "",
-          "phone": "",
-          "rating": "",
-          "address": "",
-          "imageUrl": "",
-          "hasCoupon": false
-        }
-      ]
-    },
-    "Transportation": [
-      {
-        "name": "Lyft / Uber",
-        "hours": "24/7",
-        "phone": "",
-        "rating": "4.5",
-        "address": "App-based",
+        "id": "item_1786994731282",
+        "icon": "wifi",
+        "title": "Teste",
+        "details": [],
         "imageUrl": ""
       }
     ]
@@ -342,18 +280,23 @@
         "rating": "4.9",
         "address": "5749 W Irlo Bronson Memorial Hwy",
         "website": "https://www.eskinaorlando.com/",
-        "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/43/12/ad/front.jpg?w=900&h=500&s=1",
-        "hasCoupon": true
+        "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/43/12/ad/front.jpg?w=900&h=500&s=1"
+      },
+      {
+        "name": "Eskina Brazillian",
+        "phone": "(689) 325-7833",
+        "rating": "",
+        "address": "5627 International Drive",
+        "website": "https://www.eskinaorlando.com/",
+        "imageUrl": ""
       },
       {
         "name": "Adega Gaucha Steakhouse",
         "phone": "",
-        "rating": "4.8",
+        "rating": "",
         "address": "7804 West Irlo Bronson Memorial Highway",
         "website": "",
-        "imageUrl": "https://lh3.googleusercontent.com/grass-cs/ACvplmOUPqCIw9TIjItlOYvfvTCPzE9_f0YRjZnnsBNOC5_4DbT45rDYbD_Xx3OVjjh6h7rwHZijsZauDXLm_bvIiGnti9LNKRSkQo-fv1vRlzavXviC546bS_0CSvolBlX2uJXQZC5N=w289-h312-n-k-no",
-        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786385425980.webm",
-        "hasCoupon": true
+        "imageUrl": "https://s3-eu-west-1.amazonaws.com/tpd/logos/61e19b79734f96a7bb7ed828/0x0.png"
       }
     ]
   },
@@ -453,28 +396,25 @@
     "messages": [
       {
         "ref": "",
-        "text": "ADEGA GAÚCHA: Enjoy 🍖 10% off at the CUPOM",
-        "section": "localGuide",
+        "text": "🍽️ Enjoy exclusive benefits:🍖 10% off at ADEGA GAÚCHA",
+        "section": "",
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786996654123.png",
+        "videoUrl": ""
+      },
+      {
+        "ref": "",
+        "text": "Conheça a Master Vacation Homes e viva uma experiência inesquecível em Orlando | 🍽️ Aproveite benefícios exclusivos: ESKINA Restaurant com 10% de desconto | 🍖 ADEGA GAÚCHA com 10% de desconto |  Desejamos um excelente estadia para você e sua família!",
+        "section": "",
         "imageUrl": "",
-        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787070112430.webm"
-      },
-      {
-        "ref": "",
-        "text": "Do you want use the BBQ ? Call us now",
-        "section": "houseGuide",
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365407728.webp",
         "videoUrl": ""
       },
       {
-        "ref": "",
-        "text": "Want add Pool Heat At your stay ? Contact us!",
-        "section": "houseGuide",
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786365438263.jpg",
-        "videoUrl": ""
+        "text": "rdepaula@mastervh.com",
+        "imageUrl": ""
       }
     ],
     "speed": 40,
-    "fontSize": 22
+    "fontSize": 16
   },
   "logoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/logo-1784309980256.png",
   "logoSize": 72,
@@ -488,7 +428,68 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 87,
-  "adminPassword": "0226",
-  "updatedAt": "2026-08-18T16:25:00.840Z"
+  "version": 72,
+  "services": {
+    "Grocery": [
+      {
+        "name": "Walmart Supercenter",
+        "hours": "6AM–11PM",
+        "phone": "(407) 397-1799",
+        "rating": "4.1",
+        "address": "3250 Vineland Rd, Kissimmee, FL",
+        "imageUrl": ""
+      }
+    ],
+    "Medical": [
+      {
+        "name": "CVS MinuteClinic",
+        "hours": "8AM–8PM",
+        "phone": "(407) 846-5570",
+        "rating": "4.0",
+        "address": "3001 W Vine St, Kissimmee",
+        "imageUrl": ""
+      }
+    ],
+    "Emergency": [
+      {
+        "name": "Emergency Services",
+        "hours": "24/7",
+        "phone": "911",
+        "rating": "",
+        "address": "",
+        "imageUrl": ""
+      }
+    ],
+    "Fast Food": [
+      {
+        "name": "McDonald's",
+        "hours": "6AM–12AM",
+        "phone": "(407) 396-8070",
+        "rating": "3.8",
+        "address": "8001 W Irlo Bronson Hwy",
+        "imageUrl": ""
+      }
+    ],
+    "Maintenance": [
+      {
+        "name": "Property Management",
+        "hours": "9AM–5PM",
+        "phone": "+1 (888) 123-4567",
+        "rating": "",
+        "address": "",
+        "imageUrl": ""
+      }
+    ],
+    "Transportation": [
+      {
+        "name": "Lyft / Uber",
+        "hours": "24/7",
+        "phone": "",
+        "rating": "4.5",
+        "address": "App-based",
+        "imageUrl": ""
+      }
+    ]
+  },
+  "updatedAt": "2026-08-18T18:02:24.833Z"
 }
