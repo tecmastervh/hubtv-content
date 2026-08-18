@@ -29,14 +29,8 @@
     {
       "id": "pool",
       "icon": "pool",
-      "title": "Pool",
+      "title": "House Pool Rules",
       "details": [
-        {
-          "icon": "schedule",
-          "label": "Hours",
-          "value": "8:00 AM – 10:00 PM",
-          "highlight": true
-        },
         {
           "icon": "no_drinks",
           "label": "No Glass",
@@ -56,81 +50,41 @@
           "highlight": false
         }
       ],
-      "imageUrl": "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=900&q=80"
-    },
-    {
-      "id": "parking",
-      "icon": "local_parking",
-      "title": "Parking",
-      "details": [
-        {
-          "icon": "directions_car",
-          "label": "Assigned Spots",
-          "value": "Use only designated spots for this unit",
-          "highlight": false
-        },
-        {
-          "icon": "block",
-          "label": "Restrictions",
-          "value": "No parking on grass or blocking neighbors",
-          "highlight": false
-        },
-        {
-          "icon": "warning_amber",
-          "label": "Enforcement",
-          "value": "Unauthorized vehicles may be towed",
-          "highlight": false
-        }
-      ],
-      "imageUrl": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=900&q=80"
-    },
-    {
-      "id": "trash",
-      "icon": "delete_outline",
-      "title": "Trash Collection",
-      "details": [
-        {
-          "icon": "calendar_today",
-          "label": "Pickup Days",
-          "value": "Monday and Thursday",
-          "highlight": true
-        },
-        {
-          "icon": "access_time",
-          "label": "Time",
-          "value": "Place bins at curb by 7:00 AM",
-          "highlight": false
-        },
-        {
-          "icon": "recycling",
-          "label": "Recycling",
-          "value": "Blue bin: plastics, paper and cans",
-          "highlight": false
-        }
-      ],
-      "imageUrl": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80"
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787077367266.png"
     },
     {
       "id": "checkout",
       "icon": "exit_to_app",
-      "title": "Check-out",
+      "title": "Check-out Instructions",
       "details": [
         {
           "icon": "schedule",
           "label": "Check-out Time",
-          "value": "Before 11:00 AM",
+          "value": "10:00 AM",
           "highlight": true
         },
         {
           "icon": "vpn_key",
-          "label": "Keys",
-          "value": "Return keys to the lock box before leaving",
+          "label": "Doors",
+          "value": "Make sure all doors and windows are locked",
           "highlight": false
         },
         {
           "icon": "thermostat",
           "label": "Thermostat",
           "value": "Set to 78°F before departure",
+          "highlight": false
+        },
+        {
+          "icon": "router",
+          "label": "Lights / Fans",
+          "value": "Turn off all lights and fans",
+          "highlight": false
+        },
+        {
+          "icon": "warning_amber",
+          "label": "Itens",
+          "value": "Make sure you have all your belongings with you",
           "highlight": false
         }
       ],
@@ -209,6 +163,20 @@
         }
       ],
       "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787075946092.jpg"
+    },
+    {
+      "id": "item_1787077320135",
+      "icon": "wifi",
+      "title": "Pets in the House",
+      "details": [
+        {
+          "icon": "pets",
+          "label": "",
+          "value": "We welcome service dogs and emotional support animals. Should your pet meet these criteria, they are more than welcome to stay.   Kindly note that guests will be charged for any damages or excessive cleaning required due to their pet.",
+          "highlight": false
+        }
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787077299374.jpg"
     }
   ],
   "resortInfo": {
@@ -434,7 +402,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 74,
+  "version": 75,
   "services": {
     "Grocery": [
       {
@@ -497,5 +465,5 @@
       }
     ]
   },
-  "updatedAt": "2026-08-18T18:06:27.408Z"
+  "updatedAt": "2026-08-18T18:29:34.649Z"
 }
