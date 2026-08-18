@@ -399,18 +399,24 @@
         "text": "🍽️ Enjoy exclusive benefits:🍖 10% off at ADEGA GAÚCHA",
         "section": "",
         "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1786996654123.png",
-        "videoUrl": ""
+        "videoUrl": "",
+        "durationSeconds": 30
       },
       {
         "ref": "",
         "text": "Conheça a Master Vacation Homes e viva uma experiência inesquecível em Orlando | 🍽️ Aproveite benefícios exclusivos: ESKINA Restaurant com 10% de desconto | 🍖 ADEGA GAÚCHA com 10% de desconto |  Desejamos um excelente estadia para você e sua família!",
         "section": "",
         "imageUrl": "",
-        "videoUrl": ""
+        "videoUrl": "",
+        "durationSeconds": 7
       },
       {
+        "ref": "",
         "text": "rdepaula@mastervh.com",
-        "imageUrl": ""
+        "section": "",
+        "imageUrl": "",
+        "videoUrl": "",
+        "durationSeconds": 7
       }
     ],
     "speed": 40,
@@ -428,7 +434,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 72,
+  "version": 73,
   "services": {
     "Grocery": [
       {
@@ -491,5 +497,5 @@
       }
     ]
   },
-  "updatedAt": "2026-08-18T18:02:24.833Z"
+  "updatedAt": "2026-08-18T18:04:15.853Z"
 }
