@@ -375,7 +375,7 @@
         "text": "Eskina",
         "section": "",
         "imageUrl": "",
-        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787143733079.mp4",
+        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787153667676.mp4",
         "durationSeconds": 30
       },
       {
@@ -402,7 +402,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 79,
+  "version": 80,
   "services": {
     "Grocery": [
       {
@@ -487,5 +487,5 @@
       }
     ]
   },
-  "updatedAt": "2026-08-19T15:31:34.438Z"
+  "updatedAt": "2026-08-19T15:35:16.757Z"
 }
