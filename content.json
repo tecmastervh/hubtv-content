@@ -404,7 +404,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 83,
+  "version": 84,
   "services": {
     "Grocery": [
       {
@@ -471,9 +471,9 @@
     "Restaurants": [
       {
         "name": "Adega Gaucha",
-        "phone": "",
-        "rating": "",
-        "address": "",
+        "phone": "(407) 250-4455",
+        "rating": "4.8",
+        "address": "8204 Crystal Clear Ln #1700, Orlando, FL 32809",
         "website": "",
         "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787153457212.png",
         "hasCoupon": true
@@ -481,13 +481,13 @@
       {
         "name": "Eskina",
         "phone": "",
-        "rating": "",
-        "address": "",
+        "rating": "4.7",
+        "address": "5749 W Irlo Bronson Memorial Hwy, Kissimmee, FL 34746",
         "website": "",
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787153484771.webp",
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787161005440.png",
         "hasCoupon": false
       }
     ]
   },
-  "updatedAt": "2026-08-19T17:29:25.608Z"
+  "updatedAt": "2026-08-19T17:37:05.122Z"
 }
