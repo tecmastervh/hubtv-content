@@ -1,4 +1,200 @@
 {
+  "apps": [
+    {
+      "id": "1",
+      "name": "Netflix",
+      "order": 1,
+      "iconUrl": "",
+      "packageName": "com.netflix.mediaclient"
+    },
+    {
+      "id": "2",
+      "name": "Disney+",
+      "order": 2,
+      "iconUrl": "",
+      "packageName": "com.disney.disneyplus"
+    },
+    {
+      "id": "3",
+      "name": "YouTube",
+      "order": 3,
+      "iconUrl": "",
+      "packageName": "com.google.android.youtube.tv"
+    },
+    {
+      "id": "4",
+      "name": "Amazon Prime Video",
+      "order": 4,
+      "iconUrl": "",
+      "packageName": "com.amazon.amazonvideo.livingroom"
+    },
+    {
+      "id": "5",
+      "name": "HBO Max",
+      "order": 5,
+      "iconUrl": "",
+      "packageName": "com.hbo.hbonow"
+    },
+    {
+      "id": "6",
+      "name": "Hulu",
+      "order": 6,
+      "iconUrl": "",
+      "packageName": "com.hulu.plus"
+    },
+    {
+      "id": "7",
+      "name": "Peacock",
+      "order": 7,
+      "iconUrl": "",
+      "packageName": "com.peacocktv.peacockandroid"
+    },
+    {
+      "id": "8",
+      "name": "Spotify",
+      "order": 8,
+      "iconUrl": "",
+      "packageName": "com.spotify.music"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "name": "Welcome Package",
+      "price": "$49.99",
+      "category": "Extras",
+      "imageUrl": "",
+      "description": "Champagne, chocolates & flowers"
+    },
+    {
+      "id": "2",
+      "name": "Early Check-in (10AM)",
+      "price": "$50.00",
+      "category": "Stay",
+      "imageUrl": "",
+      "description": "Check in from 10:00 AM instead of 4:00 PM"
+    },
+    {
+      "id": "3",
+      "name": "Late Check-out (2PM)",
+      "price": "$50.00",
+      "category": "Stay",
+      "imageUrl": "",
+      "description": "Check out until 2:00 PM instead of 11:00 AM"
+    },
+    {
+      "id": "4",
+      "name": "Pool Heating",
+      "price": "$75.00",
+      "category": "Extras",
+      "imageUrl": "",
+      "description": "Heated pool for duration of your stay"
+    }
+  ],
+  "ticker": {
+    "speed": 40,
+    "fontSize": 16,
+    "messages": [
+      {
+        "ref": "",
+        "text": "ADEGA GAÚCHA",
+        "section": "localGuide",
+        "imageUrl": "",
+        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787076369389.mp4",
+        "durationSeconds": 30
+      },
+      {
+        "ref": "",
+        "text": "Eskina",
+        "section": "",
+        "imageUrl": "",
+        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787153667676.mp4",
+        "durationSeconds": 30
+      },
+      {
+        "ref": "",
+        "text": "Ask for BBQ and Pool Heat for your entire stay!",
+        "section": "",
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787143765764.webp",
+        "videoUrl": "",
+        "durationSeconds": 7
+      }
+    ]
+  },
+  "logoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/logo-1784309980256.png",
+  "version": 81,
+  "homeText": {
+    "color": "",
+    "fontSize": 25,
+    "fontFamily": ""
+  },
+  "logoSize": 72,
+  "services": {
+    "Grocery": [
+      {
+        "name": "Walmart Supercenter",
+        "hours": "6AM–11PM",
+        "phone": "(407) 397-1799",
+        "rating": "4.1",
+        "address": "3250 Vineland Rd, Kissimmee, FL",
+        "imageUrl": ""
+      }
+    ],
+    "Medical": [
+      {
+        "name": "CVS MinuteClinic",
+        "hours": "8AM–8PM",
+        "phone": "(407) 846-5570",
+        "rating": "4.0",
+        "address": "3001 W Vine St, Kissimmee",
+        "imageUrl": ""
+      }
+    ],
+    "Emergency": [
+      {
+        "name": "Emergency Services",
+        "hours": "24/7",
+        "phone": "911",
+        "rating": "",
+        "address": "",
+        "imageUrl": ""
+      }
+    ],
+    "Fast Food": [
+      {
+        "name": "McDonald's",
+        "hours": "6AM–12AM",
+        "phone": "(407) 396-8070",
+        "rating": "3.8",
+        "address": "8001 W Irlo Bronson Hwy",
+        "imageUrl": ""
+      }
+    ],
+    "Maintenance": [
+      {
+        "name": "Property Management",
+        "hours": "9AM–5PM",
+        "phone": "+1 (888) 123-4567",
+        "rating": "",
+        "address": "",
+        "imageUrl": ""
+      }
+    ],
+    "Transportation": [
+      {
+        "name": "Lyft / Uber",
+        "hours": "24/7",
+        "phone": "",
+        "rating": "4.5",
+        "address": "App-based",
+        "imageUrl": ""
+      }
+    ]
+  },
+  "background": {
+    "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png",
+    "type": "image"
+  },
   "houseGuide": [
     {
       "id": "wifi",
@@ -179,17 +375,6 @@
       "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787077299374.jpg"
     }
   ],
-  "resortInfo": {
-    "Lucaya Village": [
-      {
-        "id": "item_1786994731282",
-        "icon": "wifi",
-        "title": "Teste",
-        "details": [],
-        "imageUrl": ""
-      }
-    ]
-  },
   "localGuide": {
     "Grocery": [
       {
@@ -268,203 +453,18 @@
       }
     ]
   },
-  "orders": [
-    {
-      "id": "1",
-      "name": "Welcome Package",
-      "price": "$49.99",
-      "category": "Extras",
-      "imageUrl": "",
-      "description": "Champagne, chocolates & flowers"
-    },
-    {
-      "id": "2",
-      "name": "Early Check-in (10AM)",
-      "price": "$50.00",
-      "category": "Stay",
-      "imageUrl": "",
-      "description": "Check in from 10:00 AM instead of 4:00 PM"
-    },
-    {
-      "id": "3",
-      "name": "Late Check-out (2PM)",
-      "price": "$50.00",
-      "category": "Stay",
-      "imageUrl": "",
-      "description": "Check out until 2:00 PM instead of 11:00 AM"
-    },
-    {
-      "id": "4",
-      "name": "Pool Heating",
-      "price": "$75.00",
-      "category": "Extras",
-      "imageUrl": "",
-      "description": "Heated pool for duration of your stay"
-    }
-  ],
-  "apps": [
-    {
-      "id": "1",
-      "name": "Netflix",
-      "order": 1,
-      "iconUrl": "",
-      "packageName": "com.netflix.mediaclient"
-    },
-    {
-      "id": "2",
-      "name": "Disney+",
-      "order": 2,
-      "iconUrl": "",
-      "packageName": "com.disney.disneyplus"
-    },
-    {
-      "id": "3",
-      "name": "YouTube",
-      "order": 3,
-      "iconUrl": "",
-      "packageName": "com.google.android.youtube.tv"
-    },
-    {
-      "id": "4",
-      "name": "Amazon Prime Video",
-      "order": 4,
-      "iconUrl": "",
-      "packageName": "com.amazon.amazonvideo.livingroom"
-    },
-    {
-      "id": "5",
-      "name": "HBO Max",
-      "order": 5,
-      "iconUrl": "",
-      "packageName": "com.hbo.hbonow"
-    },
-    {
-      "id": "6",
-      "name": "Hulu",
-      "order": 6,
-      "iconUrl": "",
-      "packageName": "com.hulu.plus"
-    },
-    {
-      "id": "7",
-      "name": "Peacock",
-      "order": 7,
-      "iconUrl": "",
-      "packageName": "com.peacocktv.peacockandroid"
-    },
-    {
-      "id": "8",
-      "name": "Spotify",
-      "order": 8,
-      "iconUrl": "",
-      "packageName": "com.spotify.music"
-    }
-  ],
-  "ticker": {
-    "messages": [
+  "resortInfo": {
+    "Lucaya Village": [
       {
-        "ref": "",
-        "text": "ADEGA GAÚCHA",
-        "section": "localGuide",
-        "imageUrl": "",
-        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787076369389.webm",
-        "durationSeconds": 30
-      },
-      {
-        "ref": "",
-        "text": "Eskina",
-        "section": "",
-        "imageUrl": "",
-        "videoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787153667676.mp4",
-        "durationSeconds": 30
-      },
-      {
-        "ref": "",
-        "text": "Ask for BBQ and Pool Heat for your entire stay!",
-        "section": "",
-        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787143765764.webp",
-        "videoUrl": "",
-        "durationSeconds": 7
-      }
-    ],
-    "speed": 40,
-    "fontSize": 16
-  },
-  "logoUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/logo-1784309980256.png",
-  "logoSize": 72,
-  "logoOffsetY": 0,
-  "homeText": {
-    "fontFamily": "",
-    "fontSize": 25,
-    "color": ""
-  },
-  "background": {
-    "type": "image",
-    "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
-  },
-  "version": 80,
-  "services": {
-    "Grocery": [
-      {
-        "name": "Walmart Supercenter",
-        "hours": "6AM–11PM",
-        "phone": "(407) 397-1799",
-        "rating": "4.1",
-        "address": "3250 Vineland Rd, Kissimmee, FL",
-        "imageUrl": ""
-      }
-    ],
-    "Medical": [
-      {
-        "name": "CVS MinuteClinic",
-        "hours": "8AM–8PM",
-        "phone": "(407) 846-5570",
-        "rating": "4.0",
-        "address": "3001 W Vine St, Kissimmee",
-        "imageUrl": ""
-      }
-    ],
-    "Emergency": [
-      {
-        "name": "Emergency Services",
-        "hours": "24/7",
-        "phone": "911",
-        "rating": "",
-        "address": "",
-        "imageUrl": ""
-      }
-    ],
-    "Fast Food": [
-      {
-        "name": "McDonald's",
-        "hours": "6AM–12AM",
-        "phone": "(407) 396-8070",
-        "rating": "3.8",
-        "address": "8001 W Irlo Bronson Hwy",
-        "imageUrl": ""
-      }
-    ],
-    "Maintenance": [
-      {
-        "name": "Property Management",
-        "hours": "9AM–5PM",
-        "phone": "+1 (888) 123-4567",
-        "rating": "",
-        "address": "",
-        "imageUrl": ""
-      }
-    ],
-    "Transportation": [
-      {
-        "name": "Lyft / Uber",
-        "hours": "24/7",
-        "phone": "",
-        "rating": "4.5",
-        "address": "App-based",
+        "id": "item_1786994731282",
+        "icon": "wifi",
+        "title": "Teste",
+        "details": [],
         "imageUrl": ""
       }
     ]
   },
+  "logoOffsetY": 0,
   "couponPartners": {
     "Restaurants": [
       {
@@ -487,5 +487,5 @@
       }
     ]
   },
-  "updatedAt": "2026-08-19T15:35:16.757Z"
+  "updatedAt": "2026-08-19T15:44:58.932Z"
 }
