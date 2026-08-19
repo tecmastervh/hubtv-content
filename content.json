@@ -188,6 +188,15 @@
         "details": [],
         "imageUrl": ""
       }
+    ],
+    "Paradiso Grande": [
+      {
+        "id": "item_1787160563109",
+        "icon": "info",
+        "title": "Test",
+        "details": [],
+        "imageUrl": ""
+      }
     ]
   },
   "localGuide": {
@@ -395,7 +404,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 82,
+  "version": 83,
   "services": {
     "Grocery": [
       {
@@ -480,5 +489,5 @@
       }
     ]
   },
-  "updatedAt": "2026-08-19T15:59:34.749Z"
+  "updatedAt": "2026-08-19T17:29:25.608Z"
 }
