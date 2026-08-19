@@ -402,7 +402,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 78,
+  "version": 79,
   "services": {
     "Grocery": [
       {
@@ -465,5 +465,27 @@
       }
     ]
   },
-  "updatedAt": "2026-08-19T14:45:07.092Z"
+  "couponPartners": {
+    "Restaurants": [
+      {
+        "name": "Adega Gaucha",
+        "phone": "",
+        "rating": "",
+        "address": "",
+        "website": "",
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787153457212.png",
+        "hasCoupon": true
+      },
+      {
+        "name": "Eskina",
+        "phone": "",
+        "rating": "",
+        "address": "",
+        "website": "",
+        "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787153484771.webp",
+        "hasCoupon": false
+      }
+    ]
+  },
+  "updatedAt": "2026-08-19T15:31:34.438Z"
 }
