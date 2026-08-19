@@ -120,7 +120,7 @@
           "highlight": false
         }
       ],
-      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+      "imageUrl": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1787161938245.jpg"
     },
     {
       "id": "item_1787073829782",
@@ -166,7 +166,7 @@
     },
     {
       "id": "item_1787077320135",
-      "icon": "wifi",
+      "icon": "info",
       "title": "Pets in the House",
       "details": [
         {
@@ -404,7 +404,7 @@
     "type": "image",
     "url": "https://raw.githubusercontent.com/tecmastervh/hubtv-content/main/background-1784668474922.png"
   },
-  "version": 85,
+  "version": 86,
   "services": {
     "Grocery": [
       {
@@ -489,5 +489,5 @@
       }
     ]
   },
-  "updatedAt": "2026-08-19T17:46:39.426Z"
+  "updatedAt": "2026-08-19T17:52:50.808Z"
 }
